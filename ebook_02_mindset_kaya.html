@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wealthy Mindset · Vol. 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cover-bg:#0B1829;
+  --accent:#C9A84C;
+  --accent-lt:#E8D08A;
+  --body-bg:#FAFAF7;
+  --body-text:#1A1410;
+  --heading:#0B1829;
+  --muted:#6B6360;
+  --border:#DDD5C8;
+  --card-bg:#FFFFFF;
+  --text-on-cover:#F8F4EE;
+  --sub-on-cover:rgba(248,244,238,0.55);
+  --stat-label:rgba(248,244,238,0.35);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--body-bg);color:var(--body-text);line-height:1.75;font-size:16px}
+
+/* ── COVER ── */
+.cover{
+  background:var(--cover-bg);
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:80px 48px;
+  position:relative;overflow:hidden;
+}
+.cover-noise{position:absolute;inset:0;opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.cover-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;
+}
+.cover-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 55% at 25% 20%,#C9A84C22 0%,transparent 60%),
+             radial-gradient(ellipse 50% 65% at 80% 80%,#C9A84C14 0%,transparent 55%);
+}
+.cover-vol{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.25em;
+  text-transform:uppercase;color:#C9A84C;
+  border:1px solid #C9A84C44;background:#C9A84C14;
+  padding:6px 18px;border-radius:3px;
+  display:inline-flex;align-items:center;gap:7px;
+  margin-bottom:36px;position:relative;
+}
+.cover-vol::before{content:'';width:5px;height:5px;background:#C9A84C;border-radius:50%}
+.cover-big-num{
+  position:absolute;font-family:'Playfair Display',serif;
+  font-size:clamp(140px,22vw,260px);font-weight:800;
+  color:rgba(255,255,255,.05);line-height:.85;
+  top:30px;left:50%;transform:translateX(-50%);
+  letter-spacing:-.05em;pointer-events:none;white-space:nowrap;
+}
+.cover-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,8vw,96px);font-weight:800;
+  line-height:.92;letter-spacing:-.03em;
+  color:var(--text-on-cover);
+  position:relative;margin-bottom:14px;
+}
+.cover-title em{font-style:italic;color:#E8D08A}
+.cover-tagline{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(16px,2.5vw,22px);
+  color:var(--sub-on-cover);
+  margin-bottom:52px;position:relative;max-width:520px;
+}
+.cover-rule{width:48px;height:1px;background:#C9A84C;opacity:.35;margin:0 auto 48px;position:relative}
+.cover-stats{display:flex;gap:52px;flex-wrap:wrap;justify-content:center;position:relative}
+.cs{text-align:center}
+.cs-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#E8D08A}
+.cs-l{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--stat-label);margin-top:5px}
+
+/* ── CHAPTER OPENER ── */
+.ch-opener{
+  background:var(--cover-bg);
+  padding:72px 48px 64px;
+  position:relative;overflow:hidden;
+}
+.ch-opener-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 80% at 10% 50%,#C9A84C18 0%,transparent 60%);
+}
+.ch-num{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.25em;
+  text-transform:uppercase;color:#C9A84C;margin-bottom:14px;position:relative;
+}
+.ch-opener-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,5vw,60px);font-weight:800;
+  line-height:.97;letter-spacing:-.02em;
+  color:var(--text-on-cover);position:relative;margin-bottom:14px;
+}
+.ch-opener-title em{font-style:italic;color:#E8D08A}
+.ch-opener-lead{
+  font-size:clamp(15px,2vw,18px);
+  color:var(--sub-on-cover);
+  max-width:600px;line-height:1.65;position:relative;
+}
+
+/* ── CONTENT PAGES ── */
+.page{max-width:820px;margin:0 auto;padding:64px 40px}
+.section-label{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.22em;
+  text-transform:uppercase;color:#C9A84C;margin-bottom:8px;
+}
+h2.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,4vw,40px);font-weight:700;
+  line-height:1.05;color:var(--heading);margin-bottom:18px;
+}
+h2.section-title em{font-style:italic;color:#C9A84C}
+h3.subsection{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  color:var(--heading);margin:28px 0 10px;
+}
+p{margin-bottom:16px;color:var(--body-text)}
+.lead-p{
+  font-size:18px;color:var(--heading);font-weight:400;
+  margin-bottom:24px;line-height:1.7;
+}
+.divider{display:flex;align-items:center;gap:14px;margin:52px 0}
+.dline{flex:1;height:1px;background:var(--border)}
+.ddot{width:8px;height:8px;background:#C9A84C;transform:rotate(45deg);opacity:.45}
+
+/* CALLOUT */
+.callout{
+  border-left:3px solid #C9A84C;
+  background:#C9A84C12;
+  padding:18px 22px;border-radius:0 12px 12px 0;
+  margin:22px 0;font-size:15px;color:var(--body-text);
+}
+.callout strong{color:var(--heading)}
+.callout.warning{border-left-color:#E8271A;background:rgba(232,39,26,.07)}
+.callout.warning strong{color:#C01A0F}
+.callout.tip{border-left-color:#2DB56A;background:rgba(45,181,106,.07)}
+.callout.tip strong{color:#1A7A3F}
+
+/* CARD */
+.card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:16px;padding:28px 30px;margin:18px 0;
+  box-shadow:0 2px 20px rgba(0,0,0,.05);
+}
+.card-num{
+  font-family:'Playfair Display',serif;font-size:52px;
+  font-weight:700;color:#C9A84C30;line-height:1;margin-bottom:4px;
+}
+.card-title{
+  font-family:'Playfair Display',serif;font-size:21px;font-weight:700;
+  color:var(--heading);margin-bottom:10px;
+}
+.card-title em{font-style:italic;color:#C9A84C}
+.card p{font-size:15px}
+
+/* ACTION BOX */
+.action{
+  background:#C9A84C10;border:1px solid #C9A84C30;
+  border-radius:10px;padding:14px 18px;margin-top:14px;
+  font-size:14px;color:var(--body-text);
+}
+.action::before{content:'▶ Aksi Sekarang: ';font-weight:700;color:#C9A84C}
+
+/* DATA BOX */
+.data-box{
+  background:var(--heading);border-radius:12px;
+  padding:22px 26px;margin:20px 0;
+  font-family:'DM Mono',monospace;font-size:13px;
+  color:#E8D08A;line-height:1.8;
+}
+.data-box .dc{color:rgba(232,208,138,.4)}
+.data-box .dg{color:#6FE0A0}
+.data-box .dr{color:#FF8070}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+th{background:var(--heading);color:#E8D08A;padding:11px 16px;text-align:left;font-weight:500;letter-spacing:.04em}
+td{padding:10px 16px;border-bottom:1px solid var(--border);color:var(--body-text)}
+tr:nth-child(even) td{background:#C9A84C06}
+
+/* LIST */
+ul.arrow{list-style:none;padding:0;margin:12px 0 18px}
+ul.arrow li{padding:5px 0 5px 24px;position:relative;font-size:15px;color:var(--body-text)}
+ul.arrow li::before{content:'→';position:absolute;left:0;color:#C9A84C;font-weight:700}
+ul.check{list-style:none;padding:0;margin:12px 0 18px}
+ul.check li{padding:5px 0 5px 26px;position:relative;font-size:15px;color:var(--body-text)}
+ul.check li::before{content:'✓';position:absolute;left:0;color:#2DB56A;font-weight:700}
+ul.cross{list-style:none;padding:0;margin:12px 0 18px}
+ul.cross li{padding:5px 0 5px 26px;position:relative;font-size:15px;color:var(--body-text)}
+ul.cross li::before{content:'✗';position:absolute;left:0;color:#E8271A;font-weight:700}
+
+/* STAT ROW */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:20px 0}
+.stat-item{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;text-align:center}
+.stat-item .sn{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#C9A84C}
+.stat-item .sl{font-size:12px;color:var(--muted);margin-top:4px;font-family:'DM Mono',monospace;letter-spacing:.08em}
+
+/* BACK COVER */
+.back-cover{
+  background:var(--cover-bg);
+  padding:80px 48px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.back-cover-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,#C9A84C18 0%,transparent 65%);
+}
+.back-cover h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,5vw,52px);font-weight:700;
+  color:var(--text-on-cover);margin-bottom:14px;position:relative;
+}
+.back-cover h2 em{font-style:italic;color:#E8D08A}
+.back-cover .tagline{
+  color:var(--sub-on-cover);font-size:16px;
+  max-width:520px;margin:0 auto 36px;position:relative;
+}
+.summary-list{
+  list-style:none;padding:0;max-width:500px;margin:0 auto 44px;text-align:left;
+  position:relative;
+}
+.summary-list li{
+  padding:9px 0 9px 28px;position:relative;
+  color:var(--sub-on-cover);border-bottom:1px solid rgba(255,255,255,.08);
+  font-size:14px;
+}
+.summary-list li::before{content:'✦';position:absolute;left:0;color:#E8D08A}
+.ebook-footer{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.15em;
+  color:rgba(255,255,255,.2);text-transform:uppercase;
+  margin-top:44px;position:relative;
+}
+</style>
+</head>
+<body>
+<div id="ebook-back-btn" style="position:fixed;top:16px;left:16px;z-index:9999">
+  <a href="free_ebooks.html" style="
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.06em;text-decoration:none;
+    background:rgba(6,6,6,.85);backdrop-filter:blur(12px);
+    color:rgba(248,244,238,.75);
+    padding:8px 14px;border-radius:99px;
+    border:1px solid rgba(255,255,255,.1);
+    transition:all .2s;white-space:nowrap;
+    box-shadow:0 4px 20px rgba(0,0,0,.4);
+  "
+  onmouseover="this.style.color='#E8D08A';this.style.borderColor='rgba(201,168,76,.4)'"
+  onmouseout="this.style.color='rgba(248,244,238,.75)';this.style.borderColor='rgba(255,255,255,.1)'">
+    ← Free Ebook Library
+  </a>
+</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-noise"></div>
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-big-num">M</div>
+  <div class="cover-vol">Wealthy Mindset · Vol. 2</div>
+  <div class="cover-rule"></div>
+  <h1 class="cover-title">Mindset<br><em>Kaya</em></h1>
+  <p class="cover-tagline">Psikologi di Balik Keputusan Finansial yang Mengubah Hidup</p>
+  <div class="cover-stats"><div class="cs"><div class="cs-n">7</div><div class="cs-l">Pola Pikir Kunci</div></div><div class="cs"><div class="cs-n">21</div><div class="cs-l">Hari Latihan</div></div><div class="cs"><div class="cs-n">85%</div><div class="cs-l">Pengaruh Mindset</div></div></div>
+</div>
+
+<div class="ch-opener">
+  <div class="ch-opener-glow"></div>
+  <div class="ch-num">Bab 01 · Fondasi</div>
+  <h1 class="ch-opener-title">Mengapa orang cerdas<br>tetap <em>kesulitan finansial?</em></h1>
+  <p class="ch-opener-lead">IQ tidak berkorelasi dengan kekayaan. Yang berkorelasi adalah keyakinan bawah sadar tentang uang yang terbentuk sebelum usia 7 tahun.</p>
+</div>
+<div class="page">
+  <p class="lead-p">Penelitian dari Cambridge University (2021) menemukan bahwa kebiasaan finansial dasar seseorang terbentuk sebelum usia 7 tahun. Artinya, cara kamu memperlakukan uang sekarang sangat dipengaruhi oleh apa yang kamu lihat dan dengar saat kecil.</p>
+  <div class="callout warning"><strong>Pain point umum:</strong> "Saya sudah tahu cara investasi tapi tidak pernah benar-benar melakukannya." Ini bukan masalah pengetahuan — ini masalah keyakinan yang lebih dalam tentang apakah kamu "layak" kaya.</div>
+  <h3 class="subsection">Script Uang yang Merusak</h3>
+  <p>Setiap orang memiliki "money script" — narasi bawah sadar yang mengatur keputusan finansial. Riset Dr. Brad Klontz mengidentifikasi 4 kategori money script yang paling merusak:</p>
+  <ul class="cross">
+    <li><strong>Money Avoidance:</strong> "Uang adalah sumber kejahatan" / "Orang kaya itu serakah" → Menghindari peluang finansial secara tidak sadar</li>
+    <li><strong>Money Worship:</strong> "Lebih banyak uang = lebih bahagia" → Pengeluaran kompulsif untuk mengisi kekosongan emosional</li>
+    <li><strong>Money Status:</strong> "Nilai seseorang ditentukan oleh kekayaannya" → Pengeluaran berlebihan untuk tampil kaya</li>
+    <li><strong>Money Vigilance:</strong> "Tidak pernah cukup aman" → Tidak mau menikmati hasil kerja bahkan saat sudah cukup</li>
+  </ul>
+  <div class="action">Tulis 3 kalimat yang paling sering kamu dengar tentang uang dari orang tua kamu. Identifikasi: apakah ini termasuk salah satu kategori di atas? Kesadaran adalah langkah pertama perubahan.</div>
+</div>
+
+<div class="ch-opener">
+  <div class="ch-opener-glow"></div>
+  <div class="ch-num">Bab 02 · Reframing</div>
+  <h1 class="ch-opener-title">Dari "Tidak Bisa" ke<br><em>"Bagaimana Caranya?"</em></h1>
+  <p class="ch-opener-lead">Satu perubahan kalimat yang mengubah segalanya. Bukan tentang positive thinking — tentang memaksa otak untuk mencari solusi bukan alasan.</p>
+</div>
+<div class="page">
+  <h3 class="subsection">Mengapa Kalimat "Saya Tidak Bisa" Menutup Pikiran</h3>
+  <p>Ketika kamu mengatakan "saya tidak mampu beli ini," otak kamu berhenti mencari solusi. Pernyataan itu diterima sebagai fakta. Tapi ketika kamu bertanya "bagaimana caranya saya bisa mampu ini?" — otak dipaksa masuk ke mode problem-solving.</p>
+  <p>Ini bukan self-deception. Ini memaksa dirimu untuk melihat kemungkinan yang sebelumnya tidak kamu cari.</p>
+  <table>
+    <tr><th>Kalimat Lama</th><th>Reframe ke</th><th>Hasil</th></tr>
+    <tr><td>"Tidak ada uang untuk investasi"</td><td>"Di mana bisa kurangi pengeluaran Rp200.000?"</td><td>Menemukan ruang yang tidak terlihat</td></tr>
+    <tr><td>"Investasi itu berisiko"</td><td>"Apa risiko dari TIDAK investasi?"</td><td>Perspektif lebih lengkap</td></tr>
+    <tr><td>"Nanti kalau sudah banyak"</td><td>"Berapa minimum yang bisa dimulai sekarang?"</td><td>Aksi segera dengan hambatan lebih rendah</td></tr>
+    <tr><td>"Saya tidak mengerti investasi"</td><td>"Di mana bisa pelajari satu konsep hari ini?"</td><td>Proses belajar yang berkelanjutan</td></tr>
+  </table>
+  <div class="callout tip"><strong>Latihan 21 hari:</strong> Setiap kali muncul pikiran negatif tentang uang, tulis di notepad HP. Kemudian tulis versi pertanyaan dari pikiran tersebut. Lakukan 21 hari untuk membentuk kebiasaan baru.</div>
+</div>
+
+<div class="ch-opener">
+  <div class="ch-opener-glow"></div>
+  <div class="ch-num">Bab 03 · Keputusan</div>
+  <h1 class="ch-opener-title">Biaya Tersembunyi dari<br><em>Menunda Keputusan</em></h1>
+  <p class="ch-opener-lead">Setiap tahun yang terlewat tanpa investasi bukan hanya kehilangan return — kamu kehilangan potensi compound dari seluruh masa depan investasi tersebut.</p>
+</div>
+<div class="page">
+  <h3 class="subsection">Biaya Nyata Menunda Satu Tahun</h3>
+  <p>Ini bukan tentang motivasi. Ini matematika. Seseorang yang mulai investasi Rp500.000/bulan di usia 25 dan berhenti di usia 35 (hanya 10 tahun) akan punya lebih banyak di usia 65 dibanding yang mulai di usia 35 dan terus sampai 65 (30 tahun) — dengan asumsi return 12%/tahun.</p>
+  <div class="data-box">
+<span class="dc"># Investor A: Mulai usia 25, berhenti usia 35 (10 tahun investasi)</span>
+<span class="dg">Total kontribusi:</span>  Rp60 juta
+<span class="dg">Nilai di usia 65:</span>  Rp1.84 miliar
+
+<span class="dc"># Investor B: Mulai usia 35, terus sampai 65 (30 tahun investasi)</span>
+<span class="dr">Total kontribusi:</span>  Rp180 juta
+<span class="dr">Nilai di usia 65:</span>  Rp1.76 miliar
+
+<span class="dc"># Pemenang: Investor A — dengan 1/3 kontribusi, 5% lebih banyak</span>
+  </div>
+  <p>Investor A menang bukan karena lebih banyak uang — tapi karena waktu yang lebih panjang. 10 tahun awal yang kritis tidak bisa digantikan dengan 30 tahun kerja keras belakangan.</p>
+  <h3 class="subsection">Investasi sebagai Proteksi, Bukan Spekulasi</h3>
+  <p>Salah satu alasan terbesar orang tidak mulai adalah karena mereka melihat investasi sebagai spekulasi (berisiko) bukan proteksi (aman). Framing yang tepat: tidak investasi PASTI kehilangan terhadap inflasi. Investasi di reksa dana indeks mungkin berfluktuasi tapi historis selalu memberikan return positif dalam 10+ tahun.</p>
+  <div class="action">Hitung berapa yang akan kamu miliki di usia 55 jika mulai investasi Rp300.000/bulan sekarang vs 2 tahun lagi. Gunakan kalkulator compound interest online. Lihat perbedaannya — dan putuskan.</div>
+</div>
+
+<div class="ch-opener">
+  <div class="ch-opener-glow"></div>
+  <div class="ch-num">Bab 04 · Kebiasaan</div>
+  <h1 class="ch-opener-title">Membangun Sistem,<br>Bukan Bergantung <em>Motivasi</em></h1>
+  <p class="ch-opener-lead">Motivasi datang dan pergi. Sistem yang baik bekerja bahkan di hari-hari paling malas sekalipun.</p>
+</div>
+<div class="page">
+  <p class="lead-p">Kesalahan terbesar dalam manajemen keuangan pribadi: mengandalkan willpower dan motivasi untuk membuat keputusan finansial yang baik. Willpower adalah sumber daya yang terbatas dan habis sepanjang hari.</p>
+  <h3 class="subsection">Automasi sebagai Solusi Willpower</h3>
+  <p>Orang yang secara konsisten menabung dan berinvestasi bukan karena mereka memiliki disiplin lebih tinggi. Mereka memiliki sistem yang menghilangkan kebutuhan untuk membuat keputusan berulang.</p>
+  <ul class="check">
+    <li>Autodebet investasi di tanggal gajian — tidak perlu "ingat" atau "termotivasi"</li>
+    <li>Rekening tabungan terpisah untuk dana darurat — tidak terlihat, tidak tergoda</li>
+    <li>Kartu kredit dengan limit rendah untuk pengeluaran harian — batas alami</li>
+    <li>Notifikasi bulanan untuk review portofolio — bukan daily checking yang meningkatkan kecemasan</li>
+  </ul>
+  <h3 class="subsection">Mindset Tentang Pengeluaran</h3>
+  <p>Orang dengan mindset kaya tidak melihat semua pengeluaran sama. Mereka membedakan antara:</p>
+  <table>
+    <tr><th>Pengeluaran Produktif</th><th>Pengeluaran Konsumtif</th></tr>
+    <tr><td>Buku, kursus, skill building</td><td>Makan mewah tanpa networking value</td></tr>
+    <tr><td>Tools yang meningkatkan produktivitas</td><td>Gadget terbaru untuk gaya hidup</td></tr>
+    <tr><td>Investasi kesehatan (gym, makanan bergizi)</td><td>Langganan yang tidak digunakan</td></tr>
+    <tr><td>Networking berkualitas</td><td>Hiburan tanpa nilai tambah</td></tr>
+  </table>
+  <div class="callout"><strong>Catatan penting:</strong> Pengeluaran "konsumtif" tidak selalu buruk — kamu berhak menikmati hasil kerja. Yang berbahaya adalah tidak membedakannya dan membiarkan konsumtif menghabiskan semua ruang yang seharusnya untuk produktif.</div>
+  <div class="action">Audit pengeluaran bulan lalu. Kategorikan setiap pos sebagai produktif atau konsumtif. Berapa persentasenya? Target sehat: 20-30% konsumtif, 70-80% gabungan kebutuhan dan produktif.</div>
+</div>
+
+<div class="ch-opener">
+  <div class="ch-opener-glow"></div>
+  <div class="ch-num">Bab 05 · Penutup</div>
+  <h1 class="ch-opener-title">Jangka Panjang:<br><em>Satu-satunya Kerangka yang Benar</em></h1>
+  <p class="ch-opener-lead">Kekayaan sejati dibangun dalam dekade, bukan tahun. Memahami ini mengubah cara kamu membuat semua keputusan finansial.</p>
+</div>
+<div class="page">
+  <p class="lead-p">Salah satu temuan paling konsisten dalam penelitian psikologi finansial: kemampuan berpikir jangka panjang adalah prediktor terkuat dari kesehatan finansial — lebih kuat dari penghasilan, pendidikan, atau latar belakang keluarga.</p>
+  <h3 class="subsection">The Marshmallow Test dan Uangmu</h3>
+  <p>Studi Walter Mischel di Stanford menemukan: anak-anak yang bisa menunda gratifikasi (menunggu 2 marshmallow vs langsung makan 1) memiliki outcomes hidup yang secara signifikan lebih baik — termasuk kondisi finansial.</p>
+  <p>Kabar baiknya: kemampuan menunda gratifikasi bisa dilatih. Ini bukan sifat bawaan — ini skill yang bisa dikembangkan.</p>
+  <div class="callout tip"><strong>Latihan praktis:</strong> Sebelum setiap pembelian di atas Rp500.000, tunggu 48 jam. Sebelum pembelian di atas Rp2 juta, tunggu 1 minggu. Kebanyakan pembelian impulsif tidak akan terasa mendesak setelah periode tunggu ini.</div>
+  <h3 class="subsection">Definisi Ulang "Kaya"</h3>
+  <p>Orang dengan mindset kaya mendefinisikan kaya bukan dari jumlah nominal, tapi dari financial independence — kondisi di mana aset pasif menghasilkan lebih dari pengeluaran bulanan. Ini lebih mudah dicapai dari yang dibayangkan jika dimulai lebih awal.</p>
+  <div class="stat-row">
+    <div class="stat-item"><div class="sn">25x</div><div class="sl">Pengeluaran Tahunan = FI Number</div></div>
+    <div class="stat-item"><div class="sn">4%</div><div class="sl">Safe Withdrawal Rate</div></div>
+    <div class="stat-item"><div class="sn">15-20</div><div class="sl">Tahun Konsistensi</div></div>
+  </div>
+  <p>Jika pengeluaran bulanan kamu Rp10 juta (Rp120 juta/tahun), financial independence number kamu adalah Rp3 miliar. Besar? Ya. Tapi dengan investasi konsisten Rp1 juta/bulan selama 20 tahun di return 12%, kamu bisa mendekati angka itu.</p>
+  <div class="action">Hitung financial independence number kamu: pengeluaran bulanan × 12 × 25. Bagi dengan perkiraan akumulasi investasi dalam 20 tahun. Berapa jauh jarak yang perlu ditempuh?</div>
+</div>
+
+<!-- BACK COVER -->
+<div class="back-cover">
+  <div class="back-cover-glow"></div>
+  <h2>Ambil Langkah <em>Pertama</em></h2>
+  <p class="tagline">Pengetahuan yang tidak diaplikasikan adalah hiburan. Pilih satu aksi dari panduan ini dan lakukan hari ini.</p>
+  <ul class="summary-list"><li>Identifikasi money script yang paling sering muncul dalam pikiranmu</li><li>Latih reframing selama 21 hari: catat setiap pikiran negatif tentang uang</li><li>Automasi semua keputusan finansial rutin — hapus kebutuhan willpower</li><li>Hitung biaya riil dari menunda investasi 1, 2, 5 tahun</li><li>Tentukan financial independence number kamu</li><li>Audit pengeluaran: kategorikan produktif vs konsumtif bulan ini</li></ul>
+  <div class="ebook-footer">Wealthy Mindset Series · Vol. 2 · @wealthymindset · 2026</div>
+</div>
+</body>
+</html>
