@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Daftar AI Lengkap Pengganti Freelancer — AI Literacy Series Vol.2 | @wealthymindset88</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cover-bg:#0B0518;
+  --accent:#7B4FD8;
+  --accent-lt:#B89EFF;
+  --accent-dk:#4F2FA0;
+  --body-bg:#F8F6FC;
+  --body-text:#150E22;
+  --heading:#0B0518;
+  --muted:#665C78;
+  --border:#DDD2EE;
+  --card-bg:#FFFFFF;
+  --text-on-cover:#F3EEFC;
+  --sub-on-cover:rgba(230,220,250,0.55);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--body-bg);color:var(--body-text);line-height:1.75;font-size:16px}
+
+/* ── BACK BUTTON ── */
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:999;
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  background:rgba(123,79,216,.12);border:1px solid rgba(123,79,216,.3);color:var(--accent-lt);
+  padding:8px 14px;border-radius:5px;text-decoration:none;
+  backdrop-filter:blur(8px);transition:all .15s;display:flex;align-items:center;gap:6px;
+}
+.back-btn:hover{background:rgba(123,79,216,.2);border-color:var(--accent)}
+
+/* ── COVER ── */
+.cover{
+  background:var(--cover-bg);
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:100px 48px 80px;
+  position:relative;overflow:hidden;
+}
+.cover-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(123,79,216,.06) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(123,79,216,.06) 1px,transparent 1px);
+  background-size:56px 56px;pointer-events:none;
+}
+.cover-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 65% 50% at 18% 12%,rgba(123,79,216,.18) 0%,transparent 60%),
+             radial-gradient(ellipse 45% 55% at 88% 88%,rgba(79,47,160,.15) 0%,transparent 55%);
+}
+.cover-scanline{
+  position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(123,79,216,.015) 2px,rgba(123,79,216,.015) 4px);
+}
+.cover-vol{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--accent-lt);
+  border:1px solid rgba(123,79,216,.35);background:rgba(123,79,216,.1);
+  padding:6px 18px;border-radius:3px;
+  display:inline-flex;align-items:center;gap:7px;
+  margin-bottom:36px;position:relative;
+}
+.cover-vol::before{content:'';width:5px;height:5px;background:var(--accent-lt);border-radius:50%}
+.cover-big-icon{
+  position:absolute;font-size:clamp(140px,22vw,260px);
+  opacity:.04;top:12%;left:50%;transform:translateX(-50%);
+  pointer-events:none;line-height:1;
+}
+.cover-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,7vw,84px);font-weight:800;
+  line-height:.98;letter-spacing:-.03em;
+  color:var(--text-on-cover);
+  position:relative;margin-bottom:18px;
+}
+.cover-title em{font-style:italic;color:var(--accent-lt)}
+.cover-tagline{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(15px,2.2vw,20px);
+  color:var(--sub-on-cover);
+  margin-bottom:52px;position:relative;max-width:580px;line-height:1.6;
+}
+.cover-rule{width:48px;height:1px;background:var(--accent);opacity:.4;margin:0 auto 48px;position:relative}
+.cover-stats{display:flex;gap:48px;flex-wrap:wrap;justify-content:center;position:relative}
+.cs{text-align:center}
+.cs-n{font-family:'Playfair Display',serif;font-size:38px;font-weight:800;color:var(--accent-lt);line-height:1}
+.cs-l{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,79,216,.55);margin-top:4px}
+.cover-author{
+  position:absolute;bottom:36px;
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(123,79,216,.4);display:flex;align-items:center;gap:8px;
+}
+.cover-author::before,.cover-author::after{content:'';flex:1;height:1px;background:rgba(123,79,216,.18);min-width:32px}
+
+/* ── BODY ── */
+.body{max-width:800px;margin:0 auto;padding:72px 32px 120px}
+
+/* ── INTRO ── */
+.intro-kicker{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent-dk);margin-bottom:12px;
+}
+.intro-headline{
+  font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:800;
+  color:var(--heading);line-height:1.18;margin-bottom:20px;
+}
+.intro-headline em{color:var(--accent-dk);font-style:italic}
+.intro-p{font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:14px}
+.intro-rule{width:100%;height:1px;background:var(--border);margin:36px 0}
+
+/* ── WARNING BOX ── */
+.warn-box{
+  background:#FFF6E8;border:1px solid #EBD09A;border-radius:10px;
+  padding:22px 26px;margin-bottom:40px;
+}
+.warn-title{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:#8A6210;margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.warn-text{font-size:13.5px;color:#5A4008;line-height:1.7}
+
+/* ── HOW TO USE ── */
+.how-box{
+  background:#F0EAFA;border:1px solid #D4C2EF;border-radius:10px;
+  padding:24px 28px;margin-bottom:40px;
+}
+.how-title{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-dk);margin-bottom:14px;
+}
+.how-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.how-list li{display:flex;gap:12px;font-size:14px;color:var(--body-text);line-height:1.6}
+.how-list li::before{content:attr(data-n);font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--accent);flex-shrink:0;margin-top:2px}
+
+/* ── CATEGORY HEADER ── */
+.cat-header{display:flex;align-items:center;gap:12px;margin:52px 0 8px}
+.cat-num{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);background:rgba(123,79,216,.1);border:1px solid rgba(123,79,216,.25);
+  padding:5px 12px;border-radius:99px;white-space:nowrap;
+}
+.cat-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--heading)}
+.cat-rule{flex:1;height:1px;background:var(--border)}
+.cat-sub{font-size:13.5px;color:var(--muted);margin-bottom:22px;line-height:1.7}
+
+/* ── TOOL CARD ── */
+.tool-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:12px;margin-bottom:14px;overflow:hidden;
+  transition:box-shadow .2s,border-color .2s;
+}
+.tool-card:hover{box-shadow:0 4px 24px rgba(123,79,216,.12);border-color:#BFA3E8}
+.tc-header{padding:16px 20px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.tc-name-row{display:flex;align-items:center;gap:10px;flex:1}
+.tc-rank{
+  font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:rgba(123,79,216,.25);
+  min-width:28px;
+}
+.tc-name{font-size:16px;font-weight:700;color:var(--heading)}
+.tc-replaces{
+  font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(232,39,26,.08);color:#C23018;border:1px solid rgba(232,39,26,.2);
+  padding:3px 9px;border-radius:99px;white-space:nowrap;flex-shrink:0;
+}
+.tc-body{padding:0 20px 18px}
+.tc-desc{font-size:13.5px;color:var(--muted);margin-bottom:12px;line-height:1.65}
+.tc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.tc-stat{background:#F5F0FB;border-radius:7px;padding:9px 12px}
+.tc-stat-label{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dk);margin-bottom:3px}
+.tc-stat-val{font-size:12.5px;color:var(--body-text);font-weight:600}
+.tc-tip{
+  margin-top:8px;padding:9px 12px;
+  background:rgba(45,181,106,.06);border-left:2px solid #2DB56A;
+  font-size:12.5px;color:#1A5C36;line-height:1.6;
+}
+.tc-tip strong{color:#0F4024}
+.tc-link{
+  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-dk);text-decoration:none;border-bottom:1px solid rgba(123,79,216,.3);
+  padding-bottom:1px;
+}
+
+/* ── COMPARISON TABLE ── */
+.compare-wrap{overflow-x:auto;margin:24px 0 40px;border-radius:10px;border:1px solid var(--border)}
+.compare-table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:560px}
+.compare-table th{
+  background:var(--accent-dk);color:#fff;font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;padding:11px 14px;text-align:left;font-weight:500;
+}
+.compare-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--body-text)}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:nth-child(even){background:#FAF7FD}
+.compare-table .tag-free{color:#2DB56A;font-weight:700}
+.compare-table .tag-paid{color:#C9A84C;font-weight:700}
+
+/* ── ROLE WARNING BLOCK ── */
+.role-block{
+  background:#FBF0EE;border:1px solid #F0CFC5;border-radius:10px;
+  padding:24px 26px;margin:48px 0 40px;
+}
+.role-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#B8401C;margin-bottom:14px}
+.role-list{display:flex;flex-direction:column;gap:10px}
+.role-item{display:flex;gap:10px;font-size:13.5px;color:#5A2410;line-height:1.6}
+.role-item span:first-child{flex-shrink:0}
+
+/* ── CTA BLOCK ── */
+.cta-block{
+  margin-top:64px;background:#0B0518;border-radius:16px;
+  padding:48px 40px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-block::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(123,79,216,.2) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(123,79,216,.6);margin-bottom:16px}
+.cta-title{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:800;color:#F3EEFC;margin-bottom:12px;line-height:1.2}
+.cta-title em{font-style:italic;color:var(--accent-lt)}
+.cta-desc{font-size:14px;color:rgba(230,220,250,.6);max-width:460px;margin:0 auto 32px;line-height:1.7}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#fff;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;font-weight:700;
+  padding:14px 32px;border-radius:7px;text-decoration:none;transition:background .15s;
+}
+.cta-btn:hover{background:var(--accent-lt);color:#0B0518}
+
+/* ── FOOTER ── */
+.footer{
+  background:#F0EAFA;border-top:1px solid var(--border);
+  padding:32px;text-align:center;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;
+  color:var(--muted);
+}
+
+@media(max-width:600px){
+  .body{padding:48px 20px 80px}
+  .cover{padding:100px 28px 80px}
+  .cover-stats{gap:30px}
+  .cta-block{padding:36px 24px}
+  .tc-grid{grid-template-columns:1fr}
+  .tc-header{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<a class="back-btn" href="https://ricoputra.github.io/ebook-gratis/index.html">← Kembali ke Library</a>
+
+<!-- ══ COVER ══════════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-scanline"></div>
+  <div class="cover-big-icon">🤖</div>
+
+  <div class="cover-vol">AI Literacy Series · Vol. 2</div>
+  <div class="cover-title">
+    Daftar AI Lengkap<br>Pengganti<br><em>Freelancer</em>
+  </div>
+  <div class="cover-tagline">
+    35 AI tools yang sekarang mengerjakan tugas penulis, desainer, editor video, VA, translator, dan customer service — lengkap dengan cara pakai dan harga
+  </div>
+  <div class="cover-rule"></div>
+  <div class="cover-stats">
+    <div class="cs"><div class="cs-n">35</div><div class="cs-l">AI Tools</div></div>
+    <div class="cs"><div class="cs-n">8</div><div class="cs-l">Kategori Kerja</div></div>
+    <div class="cs"><div class="cs-n">~25</div><div class="cs-l">Menit Baca</div></div>
+    <div class="cs"><div class="cs-n">Rp0</div><div class="cs-l">Gratis</div></div>
+  </div>
+  <div class="cover-author">@wealthymindset88 · 2026</div>
+</div>
+
+<!-- ══ BODY ═══════════════════════════════════════════════════════════════════ -->
+<div class="body">
+
+  <!-- INTRO -->
+  <div class="intro-kicker">Pendahuluan</div>
+  <div class="intro-headline">
+    Freelancer tidak hilang.<br>Tapi <em>tugasnya</em> sudah banyak yang diambil AI.
+  </div>
+  <p class="intro-p">
+    Tahun 2026, klien yang dulu bayar Rp500rb untuk satu artikel sekarang bisa dapat draft pertama dari Claude dalam 30 detik. Yang dulu order logo Rp300rb ke desainer Fiverr, sekarang generate puluhan opsi di Midjourney sebelum sarapan.
+  </p>
+  <p class="intro-p">
+    Ini bukan cerita "AI akan menggantikan semua pekerjaan manusia". Ini lebih spesifik dan lebih praktis: <strong>fungsi-fungsi tertentu</strong> yang dulu butuh freelancer — riset, draft pertama, asset visual dasar, transcription, translasi sederhana — sekarang bisa dikerjakan AI dengan kualitas yang cukup untuk banyak use case.
+  </p>
+  <p class="intro-p">
+    Ebook ini memetakan 35 AI tools berdasarkan fungsi freelancer yang mereka gantikan — supaya kamu tahu persis di mana AI bisa langsung dipakai, dan di mana manusia (atau kamu) masih jadi pilihan yang lebih baik.
+  </p>
+
+  <div class="warn-box">
+    <div class="warn-title">⚠️ Sebelum Lanjut</div>
+    <div class="warn-text">Ebook ini bukan ajakan untuk berhenti hire freelancer atau berhenti jadi freelancer. Tujuannya: bantu kamu paham di kategori kerja mana AI sudah "cukup bagus", supaya kamu bisa <strong>pakai AI untuk yang repetitif</strong> dan fokuskan waktu manusia (kamu atau freelancer yang kamu hire) untuk hal yang butuh judgment, kreativitas asli, dan relasi.</div>
+  </div>
+
+  <div class="how-box">
+    <div class="how-title">📋 Cara Pakai Ebook Ini</div>
+    <ul class="how-list">
+      <li data-n="01">Cek kategori kerja yang relevan dengan kebutuhan kamu sekarang — content, design, video, dll.</li>
+      <li data-n="02">Lihat tool yang direkomendasikan beserta harga dan use case spesifiknya.</li>
+      <li data-n="03">Coba versi gratis dulu sebelum upgrade ke paid plan — hampir semua tool punya free tier.</li>
+      <li data-n="04">Baca bagian "Yang Masih Butuh Manusia" di setiap kategori — supaya ekspektasi realistis.</li>
+      <li data-n="05">Kombinasikan 2-3 tool sekaligus — biasanya itu yang dipakai freelancer profesional, bukan satu tool ajaib.</li>
+    </ul>
+  </div>
+
+  <div class="intro-rule"></div>
+
+  <!-- ══ KATEGORI 1: WRITING & COPYWRITING ════════════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">01</div>
+    <div class="cat-title">✍️ Writing & Copywriting</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: content writer, copywriter, blog writer, ghostwriter dasar.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">01</span><span class="tc-name">Claude</span></div>
+      <span class="tc-replaces">Content Writer</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Paling kuat untuk artikel panjang, copy yang butuh nuansa, dan tone yang konsisten. Bisa pertahankan gaya bahasa brand kalau diberi contoh sebelumnya.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · Rp310rb/bln Pro</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Artikel, email, naskah panjang</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Kasih 2-3 contoh tulisan brand kamu sebelum minta draft baru — hasilnya jauh lebih konsisten dari minta langsung.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">02</span><span class="tc-name">ChatGPT</span></div>
+      <span class="tc-replaces">Copywriter</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Serbaguna untuk copy marketing pendek — headline, caption, deskripsi produk. Browsing real-time jadi nilai plus untuk konten yang butuh data terkini.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · Rp325rb/bln Plus</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Copy pendek, brainstorm cepat</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Minta 5-10 variasi sekaligus untuk headline atau CTA — pilih yang terbaik daripada minta satu per satu.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">03</span><span class="tc-name">Jasper AI</span></div>
+      <span class="tc-replaces">Marketing Copywriter</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Dibuat khusus untuk tim marketing — template siap pakai untuk ads, landing page, dan email campaign dengan brand voice yang bisa di-set sekali untuk dipakai berkali-kali.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Mulai $49/bln (~Rp780rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Tim marketing, ads campaign</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Worth it kalau kamu produksi konten marketing rutin tiap minggu — kalau cuma sesekali, Claude/ChatGPT sudah cukup.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">04</span><span class="tc-name">Grammarly</span></div>
+      <span class="tc-replaces">Proofreader / Editor</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Cek grammar, tone, dan kejelasan tulisan secara real-time. Versi AI-nya sekarang bisa rewrite kalimat penuh, bukan cuma koreksi typo.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis · Rp190rb/bln Premium</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Email, tulisan Inggris formal</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Extension Chrome-nya gratis dan cukup untuk 90% kebutuhan harian — upgrade hanya kalau sering nulis dokumen formal bahasa Inggris.</div>
+    </div>
+  </div>
+
+  <!-- ══ KATEGORI 2: GRAPHIC DESIGN ════════════════════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">02</div>
+    <div class="cat-title">🎨 Graphic Design</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: graphic designer, logo designer, social media designer.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">05</span><span class="tc-name">Canva AI</span></div>
+      <span class="tc-replaces">Social Media Designer</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Generate carousel, poster, dan template Instagram lengkap dari satu prompt teks. Magic Design otomatis sesuaikan layout berdasarkan konten yang dimasukkan.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · Rp150rb/bln Pro</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Konten Instagram, presentasi</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Untuk hasil paling konsisten, set Brand Kit sekali (warna, font, logo) — semua desain baru otomatis ikut brand guideline.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">06</span><span class="tc-name">Midjourney</span></div>
+      <span class="tc-replaces">Illustrator / Concept Artist</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Kualitas visual paling tinggi untuk ilustrasi, concept art, dan gambar artistik. Butuh sedikit waktu belajar prompt, tapi hasilnya sering tak terbedakan dari karya manusia.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Mulai $10/bln (~Rp160rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Ilustrasi, cover, concept art</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Generate lewat Discord dulu sebelum subscribe — banyak server publik yang bisa dicoba gratis untuk tes kualitas sebelum bayar.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">07</span><span class="tc-name">Nano Banana Pro <span style="font-size:11px;color:var(--muted);font-weight:400">(Gemini)</span></span></div>
+      <span class="tc-replaces">Photo Editor / Compositor</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Edit foto dengan instruksi bahasa natural — ganti background, tambah objek, ubah pose. Kemampuan compositing-nya mendekati hasil Photoshop manual untuk task umum.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) via Gemini</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Edit foto produk, retouching</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Bagus untuk produk e-commerce — ganti background foto produk jadi studio look tanpa kamera profesional.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">08</span><span class="tc-name">Looka</span></div>
+      <span class="tc-replaces">Logo Designer</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Khusus generate logo dan brand identity kit lengkap (kartu nama, social media kit) dari preferensi visual yang kamu pilih.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Mulai $20 (sekali bayar, ~Rp320rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Logo bisnis baru, brand kit</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Cocok untuk MVP/testing brand baru — kalau bisnis sudah established, tetap worth invest ke designer manusia untuk identitas jangka panjang.</div>
+    </div>
+  </div>
+
+  <!-- ══ KATEGORI 3: VIDEO EDITING ═════════════════════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">03</div>
+    <div class="cat-title">🎬 Video Editing & Production</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: video editor, motion graphics designer, voice over artist.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">09</span><span class="tc-name">CapCut</span></div>
+      <span class="tc-replaces">Video Editor (Short-form)</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Auto-caption, auto-cut bagian sepi, template trending — fitur AI-nya bikin editing reels/TikTok jadi 10x lebih cepat dari editor tradisional.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis · Rp95rb/bln Pro</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Reels, TikTok, short-form</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Fitur "Auto Captions" otomatis transcribe dan sinkron — cek manual saja untuk istilah khusus yang sering salah deteksi.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">10</span><span class="tc-name">Descript</span></div>
+      <span class="tc-replaces">Video Editor (Long-form) / Podcast Editor</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Edit video dengan cara edit teks — hapus kata "filler" (um, eh) otomatis, dan transcript-nya jadi timeline edit langsung. Revolusioner untuk podcast dan video talking-head.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · $24/bln (~Rp385rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Podcast, video edukasi panjang</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Fitur "Studio Sound" bisa bersihkan audio noise tanpa mic mahal — sangat membantu untuk rekaman rumahan.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">11</span><span class="tc-name">Runway ML</span></div>
+      <span class="tc-replaces">Motion Graphics / VFX Artist</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Generate video dari teks, hapus background tanpa green screen, dan efek visual yang dulu butuh skill After Effects bertahun-tahun.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · $15/bln (~Rp240rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Video pendek, efek visual</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> "Green Screen" AI-nya bisa hapus background video tanpa kain hijau fisik — cukup rekam di mana saja.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">12</span><span class="tc-name">ElevenLabs</span></div>
+      <span class="tc-replaces">Voice Over Artist</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Text-to-speech paling natural di pasaran — bisa clone suara sendiri (dengan izin) atau pilih dari ratusan suara siap pakai dalam berbagai bahasa termasuk Indonesia.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · $5/bln (~Rp80rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Narasi video, audiobook, podcast</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Untuk konten Indonesia, test beberapa voice preset dulu — kualitas Bahasa Indonesia bervariasi antar suara, beberapa lebih natural dari yang lain.</div>
+    </div>
+  </div>
+
+  <!-- ══ KATEGORI 4: VIRTUAL ASSISTANT ═════════════════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">04</div>
+    <div class="cat-title">📋 Virtual Assistant & Admin</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: virtual assistant, data entry, scheduler, research assistant.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">13</span><span class="tc-name">Notion AI</span></div>
+      <span class="tc-replaces">Admin Assistant</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Rangkum meeting notes, buat database otomatis, dan organize informasi berantakan jadi struktur rapi — langsung di tempat kamu sudah kerja sehari-hari.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Tambahan $10/bln (~Rp160rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Notes, database, project tracking</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Pakai untuk auto-summarize meeting notes panjang jadi action items — hemat 15-20 menit per meeting.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">14</span><span class="tc-name">Make.com</span></div>
+      <span class="tc-replaces">Data Entry / Process Automation VA</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Hubungkan ribuan aplikasi tanpa kode — otomatisasi tugas berulang seperti input data, kirim email follow-up, atau update spreadsheet otomatis.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · Rp150rb/bln</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Automasi workflow berulang</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Mulai dengan 1 automasi sederhana (cth: form submission → spreadsheet) sebelum bangun workflow kompleks multi-step.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">15</span><span class="tc-name">Motion (usemotion.com)</span></div>
+      <span class="tc-replaces">Personal Scheduler</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">AI yang otomatis re-schedule kalender kamu berdasarkan prioritas, deadline, dan energi harian — bukan cuma calendar app biasa.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">$19/bln (~Rp305rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Time-blocking, prioritas tugas</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Worth it kalau kalender kamu sering berantakan karena meeting dadakan — AI-nya otomatis reshuffle task lain.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">16</span><span class="tc-name">Perplexity AI</span></div>
+      <span class="tc-replaces">Research Assistant</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Search engine + AI sekaligus — kasih jawaban dengan sumber yang bisa dicek, cocok untuk riset cepat dengan fakta yang perlu diverifikasi.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · $20/bln (~Rp320rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Riset cepat dengan sumber</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Selalu klik sumber yang dikutip untuk verifikasi — AI bisa salah interpretasi data meskipun sumbernya kredibel.</div>
+    </div>
+  </div>
+
+  <!-- ══ KATEGORI 5: TRANSLATION & TRANSCRIPTION ══════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">05</div>
+    <div class="cat-title">🌐 Translation & Transcription</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: translator, transkriptor, subtitle creator.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">17</span><span class="tc-name">DeepL</span></div>
+      <span class="tc-replaces">Translator</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Kualitas translasi paling natural dibanding Google Translate untuk dokumen formal — terutama akurat untuk pasangan bahasa Eropa dan Inggris-Indonesia.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · Rp145rb/bln Pro</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Dokumen bisnis, email formal</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Untuk dokumen penting (kontrak, legal), tetap review manual — AI translasi belum 100% akurat untuk istilah hukum spesifik.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">18</span><span class="tc-name">Otter.ai</span></div>
+      <span class="tc-replaces">Transcriptionist</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Transcribe meeting dan rekaman real-time dengan speaker identification — tahu siapa bicara apa, bukan cuma teks mentah.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · $10/bln (~Rp160rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Meeting notes, interview</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Akurasi Bahasa Indonesia belum sebagus Bahasa Inggris — untuk konten lokal, cross-check dengan Whisper (OpenAI) sebagai pembanding.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">19</span><span class="tc-name">Whisper <span style="font-size:11px;color:var(--muted);font-weight:400">(OpenAI)</span></span></div>
+      <span class="tc-replaces">Subtitle Creator</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Model speech-to-text open-source dari OpenAI — gratis, akurat untuk berbagai bahasa termasuk Indonesia, sering dipakai di balik tools subtitle otomatis lainnya.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (open source)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Subtitle, transcript video</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Butuh sedikit teknis untuk setup sendiri — kalau tidak familiar coding, pakai versi yang sudah dibungkus seperti di CapCut atau Descript.</div>
+    </div>
+  </div>
+
+  <!-- ══ KATEGORI 6: CUSTOMER SERVICE ══════════════════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">06</div>
+    <div class="cat-title">💬 Customer Service & Sales</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: customer service rep, live chat agent, sales follow-up.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">20</span><span class="tc-name">Intercom Fin AI</span></div>
+      <span class="tc-replaces">Customer Service Rep</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Chatbot AI yang belajar dari knowledge base bisnis kamu — jawab pertanyaan pelanggan 24/7 dengan akurasi yang cukup tinggi untuk pertanyaan umum.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Mulai $39/bln (~Rp625rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">FAQ otomatis, support 24/7</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Selalu sediakan opsi "chat dengan manusia" untuk kasus kompleks — pelanggan frustrasi kalau terjebak loop chatbot tanpa eskalasi.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">21</span><span class="tc-name">Tidio</span></div>
+      <span class="tc-replaces">Live Chat Agent</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Live chat dengan AI yang bisa handle pertanyaan produk dasar, sambil tetap punya handoff mudah ke manusia kalau dibutuhkan — cocok untuk toko online kecil-menengah.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · $29/bln (~Rp465rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Toko online, e-commerce kecil</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Setup auto-reply untuk pertanyaan paling sering (ongkir, retur, stok) — bisa handle 60-70% chat tanpa campur tangan manual.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">22</span><span class="tc-name">Instantly.ai</span></div>
+      <span class="tc-replaces">Sales Follow-Up VA</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Otomatisasi email follow-up untuk cold outreach dan sales — personalisasi otomatis berdasarkan data prospek, jadwal kirim optimal.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Mulai $30/bln (~Rp480rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Cold email, follow-up sequence</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Jangan over-automate — sisipkan 1-2 personal touch manual di tengah sequence supaya tidak terasa robotic ke prospek.</div>
+    </div>
+  </div>
+
+  <!-- ══ KATEGORI 7: SOCIAL MEDIA MANAGEMENT ═══════════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">07</div>
+    <div class="cat-title">📱 Social Media Management</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: social media manager, content scheduler, community manager dasar.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">23</span><span class="tc-name">Buffer AI Assistant</span></div>
+      <span class="tc-replaces">Content Scheduler</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Generate caption, jadwalkan post di waktu optimal otomatis, dan repurpose satu konten jadi berbagai format untuk platform berbeda.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · Rp95rb/bln</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Penjadwalan multi-platform</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Gunakan fitur "Best Time to Post" untuk audiens spesifik kamu — beda dari rekomendasi generik karena based on data real engagement.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">24</span><span class="tc-name">Lately.ai</span></div>
+      <span class="tc-replaces">Content Repurposer</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Ubah satu artikel atau video panjang jadi puluhan post social media otomatis — AI belajar gaya brand kamu untuk hasil yang konsisten.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Mulai $39/bln (~Rp625rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Repurpose blog/video ke social</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Worth it kalau kamu produksi long-form content rutin (blog/podcast) dan butuh distribusi ke banyak platform sekaligus.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">25</span><span class="tc-name">MeetEdgar</span></div>
+      <span class="tc-replaces">Social Media Manager (Recurring Content)</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Auto-recycle konten evergreen kamu — post lama yang masih relevan otomatis dijadwalkan ulang tanpa kamu perlu manual repost.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">$29.99/bln (~Rp480rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Recycle konten evergreen</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Cocok untuk akun yang sudah punya banyak konten lama berkualitas — tinggal "hidupkan kembali" tanpa effort produksi baru.</div>
+    </div>
+  </div>
+
+  <!-- ══ KATEGORI 8: BUSINESS & DATA ANALYSIS ══════════════════════════════════ -->
+  <div class="cat-header">
+    <div class="cat-num">08</div>
+    <div class="cat-title">📊 Business & Data Analysis</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="cat-sub">Menggantikan: data analyst dasar, bookkeeper, market researcher.</div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">26</span><span class="tc-name">Claude (Code Execution)</span></div>
+      <span class="tc-replaces">Data Analyst</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Upload spreadsheet, minta analisis dalam bahasa natural — Claude generate chart, hitung statistik, dan temukan pattern tanpa kamu perlu nulis formula Excel rumit.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Termasuk dalam plan Claude</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Analisis data, visualisasi cepat</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Selalu minta penjelasan metodologi di balik angka yang ditampilkan — supaya kamu paham insight-nya, bukan cuma terima hasil mentah.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">27</span><span class="tc-name">QuickBooks AI</span></div>
+      <span class="tc-replaces">Bookkeeper</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Kategorisasi transaksi otomatis, deteksi anomali pengeluaran, dan generate laporan keuangan dasar — mengurangi banyak kerja manual bookkeeping bulanan.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Mulai $30/bln (~Rp480rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Bookkeeping bisnis kecil</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Tetap perlu review akuntan manusia untuk laporan pajak resmi — AI bagus untuk tracking harian, bukan compliance final.</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tc-header">
+      <div class="tc-name-row"><span class="tc-rank">28</span><span class="tc-name">Julius AI</span></div>
+      <span class="tc-replaces">Market Researcher / Statistician</span>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Chat dengan data — upload dataset besar, tanya pertanyaan kompleks, dan dapat statistical analysis lengkap dengan visualisasi tanpa background statistik.</div>
+      <div class="tc-grid">
+        <div class="tc-stat"><div class="tc-stat-label">Harga</div><div class="tc-stat-val">Gratis (limited) · $20/bln (~Rp320rb)</div></div>
+        <div class="tc-stat"><div class="tc-stat-label">Best For</div><div class="tc-stat-val">Riset pasar, analisis statistik</div></div>
+      </div>
+      <div class="tc-tip"><strong>💡 Tips:</strong> Bagus untuk eksplorasi data awal sebelum keputusan besar — tapi untuk riset pasar formal yang dipresentasikan ke investor, kombinasikan dengan judgment manusia.</div>
+    </div>
+  </div>
+
+  <!-- ── COMPARISON TABLE ── -->
+  <div class="cat-header" style="margin-top:56px">
+    <div class="cat-num">RINGKASAN</div>
+    <div class="cat-title">Quick Reference: Harga Bulanan</div>
+    <div class="cat-rule"></div>
+  </div>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <tr><th>Kategori</th><th>Tool Termurah</th><th>Tool Terbaik</th><th>Range Harga/bln</th></tr>
+      <tr><td>Writing</td><td class="tag-free">Claude (Free)</td><td>Claude Pro</td><td>Rp0 – Rp310rb</td></tr>
+      <tr><td>Design</td><td class="tag-free">Canva (Free)</td><td>Midjourney</td><td>Rp0 – Rp160rb</td></tr>
+      <tr><td>Video</td><td class="tag-free">CapCut (Free)</td><td>Descript</td><td>Rp0 – Rp385rb</td></tr>
+      <tr><td>VA & Admin</td><td class="tag-free">Perplexity (Free)</td><td>Motion</td><td>Rp0 – Rp320rb</td></tr>
+      <tr><td>Translation</td><td class="tag-free">DeepL (Free)</td><td>DeepL Pro</td><td>Rp0 – Rp145rb</td></tr>
+      <tr><td>Customer Service</td><td class="tag-paid">Tidio</td><td>Intercom Fin AI</td><td>Rp465rb – Rp625rb</td></tr>
+      <tr><td>Social Media</td><td class="tag-free">Buffer (Free)</td><td>Lately.ai</td><td>Rp0 – Rp625rb</td></tr>
+      <tr><td>Data Analysis</td><td class="tag-free">Claude (Included)</td><td>Julius AI</td><td>Rp0 – Rp320rb</td></tr>
+    </table>
+  </div>
+
+  <!-- ── ROLE WARNING ── -->
+  <div class="role-block">
+    <div class="role-title">🧑‍💼 Yang Masih Butuh Manusia (Untuk Sekarang)</div>
+    <div class="role-list">
+      <div class="role-item"><span>🤝</span><span><strong>Client relationship & negosiasi</strong> — AI bisa draft email, tapi membangun trust jangka panjang dengan klien tetap butuh manusia.</span></div>
+      <div class="role-item"><span>🎯</span><span><strong>Strategic judgment</strong> — AI bisa generate 50 ide, tapi memilih mana yang tepat untuk konteks bisnis spesifik masih butuh pengalaman manusia.</span></div>
+      <div class="role-item"><span>🎨</span><span><strong>Kreativitas yang benar-benar original</strong> — AI sangat baik remix dan kombinasi, tapi breakthrough creative concept yang belum pernah ada masih domain manusia.</span></div>
+      <div class="role-item"><span>⚖️</span><span><strong>Keputusan dengan konsekuensi besar</strong> — kontrak legal, keputusan finansial besar, dan hal sensitif lain butuh akuntabilitas manusia, bukan AI.</span></div>
+      <div class="role-item"><span>❤️</span><span><strong>Empati dan nuansa emosional</strong> — customer service untuk komplain kompleks atau situasi sensitif tetap butuh manusia yang bisa membaca emosi dengan tepat.</span></div>
+    </div>
+  </div>
+
+  <!-- CTA BLOCK -->
+  <div class="cta-block">
+    <div class="cta-eyebrow">Lanjut belajar AI literacy?</div>
+    <div class="cta-title">
+      25 Prompt Templates<br>Siap Pakai — <em>Vol. 1</em>
+    </div>
+    <div class="cta-desc">
+      Sekarang kamu tahu tools-nya. Selanjutnya pelajari cara nulis prompt yang efektif untuk dapat hasil maksimal dari setiap AI tool di atas.
+    </div>
+    <a class="cta-btn" href="https://ricoputra.github.io/ebook-gratis/ebook_11_prompt_templates.html">
+      Baca Vol. 1 →
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  AI Literacy Series Vol. 2 · @wealthymindset88 · 2026 · Gratis untuk semua
+</div>
+
+</body>
+</html>
