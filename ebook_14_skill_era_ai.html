@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>7 Skill yang Justru Makin Mahal di Era AI — AI Literacy Series Vol.3 | @wealthymindset88</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cover:#08081A;--acc:#7B4FD8;--acc-lt:#B89EFF;--acc-dk:#4F2FA0;
+  --body:#F8F7FC;--text:#140E22;--muted:#62587A;--border:#DDD4F0;--card:#FFFFFF;
+  --green:#2DB56A;--amber:#C9A84C;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--body);color:var(--text);line-height:1.75;font-size:16px}
+.back-btn{position:fixed;top:20px;left:20px;z-index:999;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;background:rgba(123,79,216,.12);border:1px solid rgba(123,79,216,.3);color:var(--acc-lt);padding:8px 14px;border-radius:5px;text-decoration:none;backdrop-filter:blur(8px);transition:all .15s;display:flex;align-items:center;gap:6px}
+.back-btn:hover{background:rgba(123,79,216,.22)}
+
+.cover{background:var(--cover);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 48px 80px;position:relative;overflow:hidden}
+.c-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(123,79,216,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(123,79,216,.06) 1px,transparent 1px);background-size:44px 44px}
+.c-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 22% 18%,rgba(123,79,216,.18) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 82% 82%,rgba(79,47,160,.12) 0%,transparent 55%)}
+.c-vol{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--acc-lt);border:1px solid rgba(123,79,216,.35);background:rgba(123,79,216,.1);padding:6px 18px;border-radius:3px;display:inline-flex;align-items:center;gap:7px;margin-bottom:32px;position:relative}
+.c-vol::before{content:'';width:5px;height:5px;background:var(--acc-lt);border-radius:50%}
+.c-bignum{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(140px,22vw,260px);font-weight:800;color:rgba(123,79,216,.05);line-height:.85;top:12%;left:50%;transform:translateX(-50%);pointer-events:none}
+.c-title{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,76px);font-weight:800;line-height:.95;letter-spacing:-.03em;color:#F5F2FF;position:relative;margin-bottom:16px}
+.c-title em{font-style:italic;color:var(--acc-lt)}
+.c-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,2vw,18px);color:rgba(230,220,255,.5);margin-bottom:48px;position:relative;max-width:520px;line-height:1.65}
+.c-rule{width:48px;height:1px;background:var(--acc);opacity:.4;margin:0 auto 44px}
+.c-stats{display:flex;gap:44px;flex-wrap:wrap;justify-content:center;position:relative}
+.cs .n{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:var(--acc-lt);line-height:1}
+.cs .l{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,79,216,.55);margin-top:4px}
+.c-author{position:absolute;bottom:32px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,79,216,.3);display:flex;align-items:center;gap:8px}
+.c-author::before,.c-author::after{content:'';flex:1;height:1px;background:rgba(123,79,216,.15);min-width:28px}
+
+.body{max-width:760px;margin:0 auto;padding:68px 32px 120px}
+.kicker{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc-dk);margin-bottom:12px}
+.h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text);line-height:1.18;margin-bottom:18px}
+.h1 em{color:var(--acc-dk);font-style:italic}
+.p{font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:14px}
+.rule{width:100%;height:1px;background:var(--border);margin:36px 0}
+
+/* SKILL CARD */
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:16px;overflow:hidden;transition:box-shadow .2s}
+.skill-card:hover{box-shadow:0 4px 22px rgba(123,79,216,.12);border-color:#C0ADF0}
+.sk-top{padding:20px 22px 16px;display:flex;gap:16px;align-items:flex-start;border-bottom:1px solid #EDE8F8}
+.sk-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:800;color:rgba(123,79,216,.15);line-height:.9;flex-shrink:0;margin-top:2px}
+.sk-head{flex:1}
+.sk-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.sk-tag{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(123,79,216,.75);background:rgba(123,79,216,.1);border:1px solid rgba(123,79,216,.2);padding:2px 8px;border-radius:99px;display:inline-block}
+.sk-ai-tag{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(45,181,106,.75);background:rgba(45,181,106,.1);border:1px solid rgba(45,181,106,.2);padding:2px 8px;border-radius:99px;display:inline-block;margin-left:4px}
+.sk-body{padding:0 22px 20px}
+.sk-desc{font-size:13.5px;color:var(--muted);margin:12px 0 12px;line-height:1.7}
+.sk-why{padding:10px 14px;background:rgba(123,79,216,.06);border-left:3px solid var(--acc);border-radius:0 7px 7px 0;font-size:13px;color:#3D2A70;line-height:1.6;margin-bottom:10px}
+.sk-why strong{color:var(--acc-dk)}
+.sk-action{padding:10px 14px;background:rgba(45,181,106,.06);border-left:3px solid var(--green);border-radius:0 7px 7px 0;font-size:13px;color:#1A5C36;line-height:1.6}
+.sk-action strong{color:#0F4024}
+.sk-demand{display:flex;align-items:center;gap:8px;margin-top:10px}
+.sk-demand-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.3)}
+.sk-demand-bar{height:6px;border-radius:3px;background:var(--acc);transition:width .3s ease}
+
+/* CONTRAST TABLE */
+.contrast-table{overflow-x:auto;margin:32px 0 40px;border-radius:10px;border:1px solid var(--border)}
+.ct{width:100%;border-collapse:collapse;min-width:480px}
+.ct th{background:var(--acc-dk);color:#fff;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:11px 14px;text-align:left}
+.ct td{padding:11px 14px;border-bottom:1px solid var(--border);font-size:12.5px;color:var(--text)}
+.ct tr:last-child td{border-bottom:none}
+.ct tr:nth-child(even){background:#F8F5FF}
+.down{color:#C23018;font-weight:600}
+.up{color:var(--green);font-weight:600}
+
+/* CTA */
+.cta{background:var(--cover);border-radius:16px;padding:48px 40px;text-align:center;margin-top:64px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(123,79,216,.2) 0%,transparent 65%)}
+.cta-ey{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(123,79,216,.6);margin-bottom:14px}
+.cta-ttl{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,34px);font-weight:800;color:#F5F2FF;margin-bottom:10px;line-height:1.18;position:relative}
+.cta-ttl em{font-style:italic;color:var(--acc-lt)}
+.cta-desc{font-size:13.5px;color:rgba(220,210,255,.55);max-width:440px;margin:0 auto 28px;line-height:1.7;position:relative}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#fff;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;font-weight:700;padding:14px 32px;border-radius:7px;text-decoration:none;transition:background .15s;position:relative}
+.cta-btn:hover{background:var(--acc-lt);color:#08081A}
+.footer{background:#F0EBF8;border-top:1px solid var(--border);padding:28px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--muted)}
+@media(max-width:600px){.body{padding:48px 20px 80px}.cover{padding:100px 28px 80px}.cta{padding:36px 22px}}
+</style>
+</head>
+<body>
+<a class="back-btn" href="https://ricoputra.github.io/ebook-gratis/index.html">← Kembali ke Library</a>
+
+<div class="cover">
+  <div class="c-grid"></div><div class="c-glow"></div>
+  <div class="c-bignum">7</div>
+  <div class="c-vol">AI Literacy Series · Vol. 3</div>
+  <div class="c-title">7 Skill yang<br>Justru <em>Makin</em><br>Mahal di Era AI</div>
+  <div class="c-tag">Bukan tentang skill mana yang aman dari AI — tapi skill mana yang jadi lebih berharga justru karena AI ada</div>
+  <div class="c-rule"></div>
+  <div class="c-stats">
+    <div class="cs"><div class="n">7</div><div class="l">Human Skills</div></div>
+    <div class="cs"><div class="n">3</div><div class="l">Kategori</div></div>
+    <div class="cs"><div class="n">~18</div><div class="l">Menit Baca</div></div>
+    <div class="cs"><div class="n">Rp0</div><div class="l">Gratis</div></div>
+  </div>
+  <div class="c-author">@wealthymindset88 · 2026</div>
+</div>
+
+<div class="body">
+  <div class="kicker">Pendahuluan</div>
+  <div class="h1">Semua orang khawatir AI akan<br><em>menggantikan</em> mereka.</div>
+  <p class="p">Tapi ada pertanyaan yang lebih penting: skill apa yang justru <em>makin dicari</em> karena AI ada? Karena di dunia di mana AI bisa menulis laporan, membuat kode, dan menganalisis data — ada gap baru yang terbuka.</p>
+  <p class="p">Gap itu bukan di skill teknis. Gap itu ada di hal-hal yang paling sulit diajarkan ke mesin: judgment, komunikasi manusia, keberanian mengambil keputusan di bawah ketidakpastian, dan kemampuan membangun kepercayaan di antara manusia nyata.</p>
+  <p class="p">Tujuh skill di bawah ini bukan "aman dari AI" — mereka <em>menguat karena</em> AI ada.</p>
+  <div class="rule"></div>
+
+  <div class="skill-card">
+    <div class="sk-top"><div class="sk-num">01</div><div class="sk-head"><div class="sk-title">Critical Thinking & Judgment</div><div class="sk-tag">Cognitive</div><div class="sk-ai-tag">↑ AI Makes Rarer</div></div></div>
+    <div class="sk-body">
+      <div class="sk-desc">AI bisa generate 50 opsi. Tapi siapa yang memutuskan mana yang benar untuk konteks spesifik kamu? Kemampuan mengevaluasi informasi, mengenali asumsi yang salah, dan membuat keputusan berkualitas — itu masih sepenuhnya domain manusia.</div>
+      <div class="sk-why"><strong>Kenapa makin mahal:</strong> Semua orang sekarang punya akses ke informasi yang sama via AI. Yang membedakan output mereka adalah kualitas judgment di balik prompt dan keputusan yang diambil setelahnya.</div>
+      <div class="sk-action"><strong>→ Mulai latih:</strong> Sebelum menerima output AI apapun, tanya: "Apa asumsi di balik ini? Apa yang bisa salah? Ada alternatif yang tidak dipertimbangkan?" Latih kebiasaan ini setiap hari.</div>
+      <div class="sk-demand"><span class="sk-demand-label">Demand 2026</span><div class="sk-demand-bar" style="width:92%"></div></div>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="sk-top"><div class="sk-num">02</div><div class="sk-head"><div class="sk-title">Komunikasi Manusia-ke-Manusia</div><div class="sk-tag">Interpersonal</div><div class="sk-ai-tag">↑ Scarcity Premium</div></div></div>
+    <div class="sk-body">
+      <div class="sk-desc">Dunia yang makin dipenuhi konten AI membuat komunikasi yang terasa genuinely human makin langka dan makin berharga. Kemampuan berbicara di depan orang, mendengarkan dengan sungguh-sungguh, dan menyampaikan pesan dengan empati — ini bukan skill AI.</div>
+      <div class="sk-why"><strong>Kenapa makin mahal:</strong> Email AI, presentasi AI, report AI — semua makin mirip dan makin mudah dibuat. Yang jadi pembeda adalah orang yang bisa connect secara manusiawi di atas semua noise itu.</div>
+      <div class="sk-action"><strong>→ Mulai latih:</strong> Public speaking (Toastmasters, presentasi internal), active listening (matikan notifikasi saat meeting), dan menulis dengan suara yang genuinely kamu — bukan suara AI yang di-edit.</div>
+      <div class="sk-demand"><span class="sk-demand-label">Demand 2026</span><div class="sk-demand-bar" style="width:88%"></div></div>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="sk-top"><div class="sk-num">03</div><div class="sk-head"><div class="sk-title">Learning Agility</div><div class="sk-tag">Meta-Skill</div><div class="sk-ai-tag">↑ Foundational</div></div></div>
+    <div class="sk-body">
+      <div class="sk-desc">Kemampuan belajar sesuatu yang baru dengan cepat, menghapus asumsi lama, dan mengadaptasi cara kerja. Di dunia yang tools-nya berubah setiap 6 bulan, ini bukan opsional — ini survival skill.</div>
+      <div class="sk-why"><strong>Kenapa makin mahal:</strong> Half-life knowledge makin pendek. Orang yang bisa masuk ke domain baru dalam 3 bulan dan productive dalam 6 bulan punya nilai eksponensial dibanding orang yang butuh 2 tahun untuk sama.</div>
+      <div class="sk-action"><strong>→ Mulai latih:</strong> Sengaja belajar sesuatu yang di luar comfort zone setiap kuartal. Bukan untuk jadi ahli — tapi untuk melatih "otot belajar" itu sendiri agar makin cepat dan makin efisien.</div>
+      <div class="sk-demand"><span class="sk-demand-label">Demand 2026</span><div class="sk-demand-bar" style="width:95%"></div></div>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="sk-top"><div class="sk-num">04</div><div class="sk-head"><div class="sk-title">Emotional Intelligence (EQ)</div><div class="sk-tag">Interpersonal</div><div class="sk-ai-tag">↑ Irreplaceable</div></div></div>
+    <div class="sk-body">
+      <div class="sk-desc">Membaca ruangan. Memotivasi orang yang sedang struggle. Mengelola konflik tanpa eskalasi. Memahami apa yang tidak diucapkan. Ini kemampuan yang dibutuhkan setiap hari di setiap organisasi — dan zero AI yang bisa replikasi ini secara genuine.</div>
+      <div class="sk-why"><strong>Kenapa makin mahal:</strong> Saat tim makin remote dan makin AI-assisted, kebutuhan akan manusia yang bisa navigate kompleksitas emosional tim justru naik, bukan turun.</div>
+      <div class="sk-action"><strong>→ Mulai latih:</strong> Setelah setiap conversation penting, tanya diri sendiri: "Apa yang dia rasakan, bukan hanya apa yang dia katakan?" Latihan kecil ini membangun EQ lebih dari kursus manapun.</div>
+      <div class="sk-demand"><span class="sk-demand-label">Demand 2026</span><div class="sk-demand-bar" style="width:85%"></div></div>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="sk-top"><div class="sk-num">05</div><div class="sk-head"><div class="sk-title">Kemampuan Mengelola AI Agent</div><div class="sk-tag">Technical-Human Hybrid</div><div class="sk-ai-tag">↑ New Skill</div></div></div>
+    <div class="sk-body">
+      <div class="sk-desc">Bukan kemampuan membuat AI — tapi kemampuan menggunakannya strategis, mengkonfigurasi agennya, mengevaluasi outputnya, dan membangun sistem yang jalan tanpa supervisi terus-menerus. Ini hybrid skill yang paling dicari tapi paling sedikit orang yang benar-benar terlatih.</div>
+      <div class="sk-why"><strong>Kenapa makin mahal:</strong> Perusahaan yang bisa leverage AI Agent lebih efisien dari kompetitor. Orang yang bisa build dan manage sistem ini jadi leverage multiplier bagi seluruh tim.</div>
+      <div class="sk-action"><strong>→ Mulai latih:</strong> Build satu automation kecil yang solve problem nyata bulan ini. Tidak perlu sempurna — cukup fungsional. Iterasi setelahnya. Lihat Instagram Agent sebagai blueprint.</div>
+      <div class="sk-demand"><span class="sk-demand-label">Demand 2026</span><div class="sk-demand-bar" style="width:97%"></div></div>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="sk-top"><div class="sk-num">06</div><div class="sk-head"><div class="sk-title">Storytelling yang Genuinely Human</div><div class="sk-tag">Creative-Communication</div><div class="sk-ai-tag">↑ Anti-AI Moat</div></div></div>
+    <div class="sk-body">
+      <div class="sk-desc">AI bisa nulis cerita yang strukturnya bagus tapi terasa plastik. Cerita yang menggerakkan orang — yang memiliki detail spesifik dari pengalaman nyata, kerentanan asli, dan sudut pandang yang belum pernah ada sebelumnya — itu masih sepenuhnya milik manusia.</div>
+      <div class="sk-why"><strong>Kenapa makin mahal:</strong> Di dunia yang kontennya makin banyak dan makin sama, storytelling yang authentically human jadi scarce dan jadi differentiator yang paling kuat untuk brand personal maupun bisnis.</div>
+      <div class="sk-action"><strong>→ Mulai latih:</strong> Tulis satu cerita nyata dari pengalamanmu sendiri setiap minggu — tidak untuk dipublish, tapi untuk berlatih. Spesifisitas adalah kunci: nama, angka, tanggal, dialog yang benar-benar terjadi.</div>
+      <div class="sk-demand"><span class="sk-demand-label">Demand 2026</span><div class="sk-demand-bar" style="width:82%"></div></div>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <div class="sk-top"><div class="sk-num">07</div><div class="sk-head"><div class="sk-title">Negotiation & Persuasion</div><div class="sk-tag">High-Income Skill</div><div class="sk-ai-tag">↑ Direct ROI</div></div></div>
+    <div class="sk-body">
+      <div class="sk-desc">Setiap deal, setiap raise, setiap partnership, setiap resource yang kamu dapatkan di karir — semuanya melewati negotiation. Ini skill yang paling langsung menghasilkan uang, tapi paling jarang diajarkan secara formal. Dan AI tidak bisa negotiate untuk kamu.</div>
+      <div class="sk-why"><strong>Kenapa makin mahal:</strong> Di dunia yang information advantage makin berkurang (semua orang bisa research dengan AI), yang membedakan hasil negotiation adalah kemampuan memahami apa yang benar-benar diinginkan pihak lain dan menciptakan deal yang keduanya menang.</div>
+      <div class="sk-action"><strong>→ Mulai latih:</strong> Gunakan AI untuk prep negotiation (research, anticipate objections, practice) tapi jangan biarkan AI replace moment negotiation itu sendiri. Setiap negotiation yang kamu menangkan build muscle lebih dari 10 kursus.</div>
+      <div class="sk-demand"><span class="sk-demand-label">Demand 2026</span><div class="sk-demand-bar" style="width:90%"></div></div>
+    </div>
+  </div>
+
+  <div class="contrast-table">
+    <table class="ct">
+      <tr><th>Skill</th><th>Trend AI Era</th><th>Kenapa</th></tr>
+      <tr><td>Data entry manual</td><td class="down">↓ Terancam</td><td>AI lebih cepat dan lebih akurat</td></tr>
+      <tr><td>Translasi dasar</td><td class="down">↓ Terancam</td><td>DeepL dan GPT sudah cukup untuk 80% kebutuhan</td></tr>
+      <tr><td>Copywriting generik</td><td class="down">↓ Terancam</td><td>AI bisa produce volume besar dengan kualitas "cukup bagus"</td></tr>
+      <tr><td>Critical thinking</td><td class="up">↑ Makin mahal</td><td>AI butuh manusia untuk evaluate dan decide</td></tr>
+      <tr><td>EQ & Komunikasi manusia</td><td class="up">↑ Makin mahal</td><td>Scarcity premium di dunia yang makin AI-ified</td></tr>
+      <tr><td>Mengelola AI Agent</td><td class="up">↑ Skill baru</td><td>Gap antara yang bisa dan tidak bisa makin lebar tiap bulan</td></tr>
+      <tr><td>Storytelling authentik</td><td class="up">↑ Anti-AI moat</td><td>AI tidak bisa replikasi pengalaman nyata dan kerentanan asli</td></tr>
+    </table>
+  </div>
+
+  <div class="cta">
+    <div class="cta-ey">Sudah punya skill-nya, mau tambah income stream?</div>
+    <div class="cta-ttl">Lihat cara bangun<br><em>Instagram Agent</em> yang posting sendiri</div>
+    <div class="cta-desc">Sistem yang jalan saat kamu tidur — termasuk panduan lengkap setup, series, dan monetisasi.</div>
+    <a class="cta-btn" href="https://ricoputra.github.io/ebook/">Lihat Instagram Agent Ebook →</a>
+  </div>
+</div>
+<div class="footer">AI Literacy Series Vol.3 · @wealthymindset88 · 2026 · Gratis untuk semua</div>
+</body>
+</html>

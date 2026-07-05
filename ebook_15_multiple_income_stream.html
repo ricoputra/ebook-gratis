@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Framework 3 Income Stream — Dari Satu Gaji ke Banyak Sumber | @wealthymindset88</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cover:#070E08;--acc:#2DB56A;--acc-lt:#7EDBA8;--acc-dk:#1A7040;
+  --gold:#C9A84C;--gold-lt:#E8D08A;
+  --body:#F5FBF7;--text:#0C1A10;--muted:#456050;--border:#C8E0D0;--card:#FFFFFF;
+  --red:#C23018;--purple:#7B4FD8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--body);color:var(--text);line-height:1.75;font-size:16px}
+.back-btn{position:fixed;top:20px;left:20px;z-index:999;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;background:rgba(45,181,106,.12);border:1px solid rgba(45,181,106,.3);color:var(--acc-lt);padding:8px 14px;border-radius:5px;text-decoration:none;backdrop-filter:blur(8px);transition:all .15s;display:flex;align-items:center;gap:6px}
+.back-btn:hover{background:rgba(45,181,106,.22)}
+
+/* COVER */
+.cover{background:var(--cover);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 48px 80px;position:relative;overflow:hidden}
+.c-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(45,181,106,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(45,181,106,.05) 1px,transparent 1px);background-size:44px 44px}
+.c-glow{position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 20% 15%,rgba(45,181,106,.18) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 85% 85%,rgba(201,168,76,.1) 0%,transparent 55%)}
+.c-badge{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--acc-lt);border:1px solid rgba(45,181,106,.35);background:rgba(45,181,106,.1);padding:6px 18px;border-radius:3px;display:inline-flex;align-items:center;gap:7px;margin-bottom:32px;position:relative}
+.c-badge::before{content:'';width:5px;height:5px;background:var(--acc-lt);border-radius:50%}
+.c-bignum{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(160px,26vw,320px);font-weight:800;color:rgba(45,181,106,.04);line-height:.85;top:10%;left:50%;transform:translateX(-50%);pointer-events:none;white-space:nowrap}
+.c-title{font-family:'Playfair Display',serif;font-size:clamp(38px,6.5vw,82px);font-weight:800;line-height:.95;letter-spacing:-.03em;color:#F0FFF5;position:relative;margin-bottom:16px}
+.c-title em{font-style:italic;color:var(--acc-lt)}
+.c-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,2vw,18px);color:rgba(210,255,230,.5);margin-bottom:48px;position:relative;max-width:520px;line-height:1.65}
+.c-rule{width:48px;height:1px;background:var(--acc);opacity:.4;margin:0 auto 44px}
+.c-stats{display:flex;gap:44px;flex-wrap:wrap;justify-content:center;position:relative}
+.cs .n{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:var(--acc-lt);line-height:1}
+.cs .l{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(45,181,106,.5);margin-top:4px}
+.c-author{position:absolute;bottom:32px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(45,181,106,.3);display:flex;align-items:center;gap:8px}
+.c-author::before,.c-author::after{content:'';flex:1;height:1px;background:rgba(45,181,106,.15);min-width:28px}
+
+/* BODY */
+.body{max-width:760px;margin:0 auto;padding:68px 32px 120px}
+.kicker{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc-dk);margin-bottom:12px}
+.h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--text);line-height:1.18;margin-bottom:18px}
+.h1 em{color:var(--acc-dk);font-style:italic}
+.p{font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:14px}
+.rule{width:100%;height:1px;background:var(--border);margin:36px 0}
+
+/* RISK BOX */
+.risk-box{background:#FFF5F3;border:1px solid #F0C8C0;border-radius:10px;padding:22px 26px;margin-bottom:36px}
+.risk-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.risk-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.rs{text-align:center;background:#fff;border-radius:8px;padding:12px;border:1px solid #F0D0C8}
+.rs .rn{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--red);line-height:1}
+.rs .rl{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(194,48,24,.5);margin-top:3px;line-height:1.4}
+
+/* TIER SYSTEM */
+.tier-intro{background:#F0FBF4;border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin:36px 0 28px}
+.ti-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-dk);margin-bottom:12px}
+.ti-p{font-size:14px;color:var(--muted);line-height:1.7}
+
+.tier-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden;transition:box-shadow .2s}
+.tier-card:hover{box-shadow:0 4px 22px rgba(45,181,106,.1)}
+.tc-top{padding:20px 22px 16px;border-bottom:1px solid #DCF0E4;display:flex;gap:16px;align-items:flex-start}
+.tc-num-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0}
+.tc-tier-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(45,181,106,.6)}
+.tc-num{font-family:'Playfair Display',serif;font-size:44px;font-weight:800;color:rgba(45,181,106,.18);line-height:.85}
+.tc-head{flex:1}
+.tc-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.tc-tag{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:99px;display:inline-block;margin-right:4px}
+.t1{background:rgba(45,181,106,.1);color:var(--acc-dk);border:1px solid rgba(45,181,106,.2)}
+.t2{background:rgba(201,168,76,.1);color:#7A5808;border:1px solid rgba(201,168,76,.2)}
+.t3{background:rgba(123,79,216,.1);color:#4F2FA0;border:1px solid rgba(123,79,216,.2)}
+.tc-body{padding:0 22px 20px}
+.tc-desc{font-size:13.5px;color:var(--muted);margin:12px 0 14px;line-height:1.7}
+
+/* EXAMPLES INSIDE TIER */
+.examples-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.ex-item{background:#F2FBF5;border:1px solid #C0E8CC;border-radius:8px;padding:10px 12px}
+.ex-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.ex-time{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.04em}
+.ex-income{font-family:'DM Mono',monospace;font-size:10px;color:var(--acc-dk);font-weight:600;margin-top:3px}
+
+.tc-start{padding:10px 14px;background:#F0FBF4;border-left:3px solid var(--acc);border-radius:0 7px 7px 0;font-size:13px;color:#1A5C38;line-height:1.6;margin-bottom:10px}
+.tc-start strong{color:#0F4024}
+.tc-warning{padding:10px 14px;background:#FFF9EE;border-left:3px solid var(--gold);border-radius:0 7px 7px 0;font-size:13px;color:#7A5808;line-height:1.6}
+.tc-warning strong{color:#5A3808}
+
+/* ROADMAP */
+.roadmap{margin:40px 0}
+.rm-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-dk);margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.rm-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.rm-row{display:flex;gap:16px;margin-bottom:22px;position:relative}
+.rm-row::before{content:'';position:absolute;left:19px;top:40px;width:2px;height:calc(100% + 6px);background:var(--border)}
+.rm-row:last-child::before{display:none}
+.rm-month{width:38px;height:38px;border-radius:50%;background:var(--acc);color:#fff;font-family:'Playfair Display',serif;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;position:relative}
+.rm-content{flex:1;padding-top:6px}
+.rm-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc-dk);margin-bottom:4px}
+.rm-tasks{font-size:13.5px;color:var(--muted);line-height:1.7}
+.rm-tasks li{margin-left:16px;margin-bottom:3px}
+
+/* CAREER MOAT SECTION */
+.moat-box{background:#FBF8FF;border:1px solid #DDD0F0;border-radius:12px;padding:24px 26px;margin:36px 0}
+.mb-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);margin-bottom:16px}
+.moat-list{display:flex;flex-direction:column;gap:10px}
+.moat-item{display:flex;gap:12px;font-size:14px;color:var(--text);line-height:1.65}
+.moat-item .mi-num{font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--purple);flex-shrink:0;margin-top:2px}
+.moat-item .mi-text strong{color:var(--text)}
+.moat-item .mi-text{color:var(--muted)}
+
+/* AGENT CALLOUT */
+.agent-callout{background:var(--cover);border-radius:12px;padding:24px 26px;margin:36px 0;position:relative;overflow:hidden}
+.agent-callout::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 50%,rgba(45,181,106,.12) 0%,transparent 65%)}
+.ac-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-lt);margin-bottom:10px;position:relative}
+.ac-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:#F0FFF5;margin-bottom:8px;position:relative;line-height:1.25}
+.ac-title em{font-style:italic;color:var(--acc-lt)}
+.ac-desc{font-size:13.5px;color:rgba(200,255,225,.55);line-height:1.7;position:relative;margin-bottom:14px}
+.ac-stats{display:flex;gap:20px;flex-wrap:wrap;position:relative}
+.ac-stat .n{font-family:'DM Mono',monospace;font-size:16px;font-weight:700;color:var(--acc-lt)}
+.ac-stat .l{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(150,220,180,.45)}
+
+/* CTA */
+.cta{background:var(--cover);border-radius:16px;padding:48px 40px;text-align:center;margin-top:64px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(45,181,106,.18) 0%,transparent 65%)}
+.cta-ey{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(45,181,106,.55);margin-bottom:14px}
+.cta-ttl{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,34px);font-weight:800;color:#F0FFF5;margin-bottom:10px;line-height:1.18;position:relative}
+.cta-ttl em{font-style:italic;color:var(--acc-lt)}
+.cta-desc{font-size:13.5px;color:rgba(200,255,225,.5);max-width:440px;margin:0 auto 28px;line-height:1.7;position:relative}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#000;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;font-weight:700;padding:14px 32px;border-radius:7px;text-decoration:none;transition:background .15s;position:relative}
+.cta-btn:hover{background:var(--acc-lt)}
+.footer{background:#EBF7F0;border-top:1px solid var(--border);padding:28px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--muted)}
+@media(max-width:600px){.body{padding:48px 20px 80px}.cover{padding:100px 28px 80px}.risk-stats{grid-template-columns:1fr}.examples-grid{grid-template-columns:1fr}.cta{padding:36px 22px}}
+</style>
+</head>
+<body>
+<a class="back-btn" href="https://ricoputra.github.io/ebook-gratis/index.html">← Kembali ke Library</a>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="c-grid"></div><div class="c-glow"></div>
+  <div class="c-bignum">3×</div>
+  <div class="c-badge">Income Diversification · Framework</div>
+  <div class="c-title">Framework<br><em>3 Income</em><br>Stream</div>
+  <div class="c-tag">Dari satu gaji yang bisa hilang besok, ke tiga sumber penghasilan yang saling memperkuat — panduan langkah demi langkah</div>
+  <div class="c-rule"></div>
+  <div class="c-stats">
+    <div class="cs"><div class="n">3</div><div class="l">Tier Stream</div></div>
+    <div class="cs"><div class="n">12</div><div class="l">Bulan Roadmap</div></div>
+    <div class="cs"><div class="n">~22</div><div class="l">Menit Baca</div></div>
+    <div class="cs"><div class="n">Rp0</div><div class="l">Gratis</div></div>
+  </div>
+  <div class="c-author">@wealthymindset88 · 2026</div>
+</div>
+
+<!-- BODY -->
+<div class="body">
+  <div class="kicker">Pendahuluan</div>
+  <div class="h1">Satu sumber penghasilan<br>adalah <em>risiko tersembunyi</em> terbesar.</div>
+  <p class="p">Bukan karena gajinya kecil. Bukan karena perusahaannya tidak bagus. Tapi karena seluruh kemampuan finansial kamu — bayar cicilan, isi tabungan, jaga keluarga — bergantung pada satu keputusan yang bisa diambil orang lain kapan saja: keputusan untuk memberhentikan kamu.</p>
+  <p class="p">PHK gelombang 2026 tidak memberi peringatan. Restrukturisasi tidak menunggu kamu siap. Dan rata-rata pekerja Indonesia punya runway kurang dari 6 minggu setelah kehilangan pekerjaan.</p>
+  <p class="p">Ebook ini bukan tentang "tinggalkan pekerjaan dan jadi pengusaha." Ini tentang membangun sistem di mana pekerjaanmu tetap ada, tapi bukan satu-satunya hal yang menopang hidupmu.</p>
+
+  <div class="risk-box">
+    <div class="risk-title">⚠ Angka yang Harus Kamu Ketahui</div>
+    <p style="font-size:13.5px;color:#7A3018;line-height:1.7">Data dari survei pekerja Indonesia 2026 — tentang kondisi finansial saat menghadapi kehilangan pekerjaan.</p>
+    <div class="risk-stats">
+      <div class="rs"><div class="rn">73%</div><div class="rl">Tidak punya income selain gaji pokok</div></div>
+      <div class="rs"><div class="rn">6 mg</div><div class="rl">Rata-rata runway finansial setelah PHK</div></div>
+      <div class="rs"><div class="rn">34%</div><div class="rl">Kenaikan PHK di Q1 2026 vs tahun lalu</div></div>
+    </div>
+  </div>
+
+  <div class="tier-intro">
+    <div class="ti-title">🏗 Sistem 3 Tier — Bukan 3 Pekerjaan</div>
+    <p class="ti-p">Banyak orang salah mengartikan "multiple income stream" sebagai punya tiga pekerjaan sekaligus. Itu bukan sistemnya — itu burnout yang terencana. Framework ini tentang tiga <em>tier</em> yang berbeda karakternya: Tier 1 adalah fondasi aktif, Tier 2 adalah leverage, Tier 3 adalah passive. Ketiganya berjalan bersamaan tapi dengan intensitas yang berbeda.</p>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- TIER 1 -->
+  <div class="tier-card">
+    <div class="tc-top">
+      <div class="tc-num-wrap">
+        <div class="tc-tier-label">Tier</div>
+        <div class="tc-num">1</div>
+      </div>
+      <div class="tc-head">
+        <div class="tc-title">Income Aktif Utama — Lindungi dan Optimalkan</div>
+        <span class="tc-tag t1">Pekerjaan Utama</span>
+        <span class="tc-tag t1">High Income Skills</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Tier 1 bukan pekerjaan lain — ini tentang memaksimalkan pekerjaan yang sudah ada. Gaji adalah sumber modal untuk membangun Tier 2 dan 3. Tapi gaji yang stagnan atau posisi yang rentan adalah fondasi yang retak. Kuatkan ini dulu.</div>
+
+      <div class="examples-grid">
+        <div class="ex-item">
+          <div class="ex-name">Negosiasi gaji tahunan</div>
+          <div class="ex-time">1–2 jam prep · timing: review performance</div>
+          <div class="ex-income">+Rp1–5 juta/bln impact</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Build Career Moat</div>
+          <div class="ex-time">30 mnt/hari · jangka panjang</div>
+          <div class="ex-income">Keamanan & leverage karir</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">High income skill baru</div>
+          <div class="ex-time">15 mnt/hari · 90 hari konsisten</div>
+          <div class="ex-income">Data analysis / Sales / BD</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Internal project & visibility</div>
+          <div class="ex-time">1 project/kuartal</div>
+          <div class="ex-income">Posisi lebih aman, promotion path</div>
+        </div>
+      </div>
+
+      <div class="tc-start"><strong>→ Langkah pertama:</strong> Jadwalkan salary review conversation bulan ini. Research market rate posisimu di LinkedIn Jobs + Glassdoor. Angka nyata di tangan kamu adalah satu-satunya leverage yang valid.</div>
+      <div class="tc-warning"><strong>⚠ Jangan skip Tier 1:</strong> Banyak orang langsung lompat ke Tier 2 dan 3 saat pekerjaan utamanya belum aman atau gajinya belum optimal. Hasilnya: Tier 2 dan 3 jadi sumber stres, bukan buffer.</div>
+    </div>
+  </div>
+
+  <!-- TIER 2 -->
+  <div class="tier-card">
+    <div class="tc-top">
+      <div class="tc-num-wrap">
+        <div class="tc-tier-label">Tier</div>
+        <div class="tc-num">2</div>
+      </div>
+      <div class="tc-head">
+        <div class="tc-title">Income Leverage — Skill yang Sudah Kamu Punya</div>
+        <span class="tc-tag t2">Skill Monetization</span>
+        <span class="tc-tag t2">1–3 Jam/Hari</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Tier 2 adalah monetisasi skill yang kamu sudah bayar dengan waktu dan pengalaman selama bertahun-tahun di Tier 1. Bukan skill baru — skill yang sama, dijual ke market yang berbeda. Ini adalah income yang paling cepat dibangun karena tidak butuh belajar dari nol.</div>
+
+      <div class="examples-grid">
+        <div class="ex-item">
+          <div class="ex-name">Freelance / consulting</div>
+          <div class="ex-time">Weekend / malam · 5–15 jam/minggu</div>
+          <div class="ex-income">Rp2–15 juta/bulan</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Digital product (ebook/template)</div>
+          <div class="ex-time">Build 1× · jual terus</div>
+          <div class="ex-income">Rp500rb–5 juta/bulan</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Online course / workshop</div>
+          <div class="ex-time">Build 4–8 minggu · recurring</div>
+          <div class="ex-income">Rp3–20 juta/launching</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Konten edukatif (afiliasi)</div>
+          <div class="ex-time">1–2 jam/hari · sistem grows</div>
+          <div class="ex-income">Rp1–8 juta/bulan</div>
+        </div>
+      </div>
+
+      <div class="tc-start"><strong>→ Langkah pertama:</strong> List 5 hal yang orang sering minta tolong ke kamu karena kamu dianggap ahlinya. Pilih satu yang bisa dijual sebagai jasa atau produk digital. Validasi dengan 3 orang sebelum build apapun.</div>
+      <div class="tc-warning"><strong>⚠ Batasi jam aktif di Tier 2:</strong> Maksimal 15–20 jam/minggu untuk Tier 2 di fase awal. Sisanya untuk Tier 1 (tetap performa) dan membangun Tier 3. Tier 2 yang tidak dibatasi berubah jadi pekerjaan kedua penuh, bukan sistem.</div>
+    </div>
+  </div>
+
+  <!-- TIER 3 -->
+  <div class="tier-card">
+    <div class="tc-top">
+      <div class="tc-num-wrap">
+        <div class="tc-tier-label">Tier</div>
+        <div class="tc-num">3</div>
+      </div>
+      <div class="tc-head">
+        <div class="tc-title">Income Pasif — Sistem yang Bekerja Saat Kamu Tidur</div>
+        <span class="tc-tag t3">Automation</span>
+        <span class="tc-tag t3">Passive Income</span>
+      </div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-desc">Tier 3 adalah puncak sistem — income yang tidak butuh jam kerja aktif per transaksi. Ini yang paling lama dibangun tapi paling kuat efeknya. Di 2026, kombinasi AI automation + afiliasi + investasi adalah jalur Tier 3 yang paling accessible untuk pekerja Indonesia.</div>
+
+      <div class="examples-grid">
+        <div class="ex-item">
+          <div class="ex-name">Investasi reksa dana DCA</div>
+          <div class="ex-time">15 menit/bulan setup</div>
+          <div class="ex-income">Compound 10–14%/tahun</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Afiliasi + konten otomatis</div>
+          <div class="ex-time">Setup 1 weekend · jalan terus</div>
+          <div class="ex-income">Rp500rb–5 juta/bulan</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Instagram Agent (AI automation)</div>
+          <div class="ex-time">Setup 1 weekend · posting tiap hari</div>
+          <div class="ex-income">Rp1–8 juta/bulan komisi</div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-name">Digital product evergreen</div>
+          <div class="ex-time">Build 1× · sales page aktif</div>
+          <div class="ex-income">Rp500rb–3 juta/bulan passive</div>
+        </div>
+      </div>
+
+      <div class="tc-start"><strong>→ Langkah pertama:</strong> Mulai Tier 3 dengan investasi — buka rekening Bibit/Ajaib, setup DCA otomatis Rp200rb–500rb/bulan. Ini Tier 3 paling sederhana dan paling terbukti. Automasi konten bisa menyusul.</div>
+      <div class="tc-warning"><strong>⚠ Tier 3 butuh modal dari Tier 1 dan 2:</strong> Tidak ada yang benar-benar "gratis". Investasi butuh uang, konten otomatis butuh waktu setup. Jangan ekspektasi Tier 3 berjalan sebelum Tier 1 dan 2 stabil.</div>
+    </div>
+  </div>
+
+  <!-- ROADMAP 12 BULAN -->
+  <div class="roadmap">
+    <div class="rm-title">Roadmap 12 Bulan — Urutan yang Benar</div>
+    <div class="rm-row">
+      <div class="rm-month">1–2</div>
+      <div class="rm-content">
+        <div class="rm-label">Fondasi Tier 1</div>
+        <ul class="rm-tasks">
+          <li>Hitung net worth sekarang — baseline harus ada</li>
+          <li>Research market rate posisimu, schedule salary conversation</li>
+          <li>Identifikasi 1 high income skill yang akan diperdalam 90 hari ke depan</li>
+          <li>Setup dana darurat — target minimal 3 bulan pengeluaran sebelum lanjut</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rm-row">
+      <div class="rm-month">3–4</div>
+      <div class="rm-content">
+        <div class="rm-label">Validasi Tier 2</div>
+        <ul class="rm-tasks">
+          <li>Identifikasi skill yang bisa dijual — list 5, pilih 1 untuk divalidasi</li>
+          <li>Cari 3 orang yang mau bayar untuk skill itu (validasi sebelum build)</li>
+          <li>Ambil 1–2 klien freelance/konsultasi pertama — bukan untuk uang, untuk proof of concept</li>
+          <li>Mulai DCA investasi Rp200rb–500rb/bulan — ini Tier 3 pertama yang paling mudah</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rm-row">
+      <div class="rm-month">5–7</div>
+      <div class="rm-content">
+        <div class="rm-label">Build Tier 2 + Mulai Tier 3</div>
+        <ul class="rm-tasks">
+          <li>Scale Tier 2 ke 3–5 klien atau launch digital product pertama</li>
+          <li>Setup afiliasi di platform utama (Shopee, Tokopedia, atau program SaaS)</li>
+          <li>Mulai konten edukasi di Instagram — manual dulu, automasi menyusul</li>
+          <li>Target: Tier 2 income ≥ Rp1.5 juta/bulan sebelum lanjut</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rm-row">
+      <div class="rm-month">8–12</div>
+      <div class="rm-content">
+        <div class="rm-label">Automasi Tier 3</div>
+        <ul class="rm-tasks">
+          <li>Setup Instagram Agent — konten + afiliasi berjalan otomatis</li>
+          <li>Naikkan DCA investasi dengan income Tier 2 yang masuk</li>
+          <li>Review: 3 stream sudah berjalan? Tier 1 aman? Tier 2 profitable? Tier 3 bergerak?</li>
+          <li>Target akhir tahun: total income Tier 2+3 ≥ 30% dari Tier 1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREER MOAT SECTION -->
+  <div class="moat-box">
+    <div class="mb-title">🏰 Career Moat — Proteksi Tier 1 yang Sering Dilupakan</div>
+    <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Career moat adalah kombinasi skill, pengalaman, dan reputasi yang sulit ditiru orang lain — yang membuat posisimu di Tier 1 makin aman dan makin berharga seiring waktu.</p>
+    <div class="moat-list">
+      <div class="moat-item"><span class="mi-num">01</span><div class="mi-text"><strong>Spesialisasi sempit yang dalam</strong> — jadi the go-to person untuk satu hal spesifik yang susah digantikan, bukan generalist yang bisa digantikan siapa saja (atau AI).</div></div>
+      <div class="moat-item"><span class="mi-num">02</span><div class="mi-text"><strong>Network yang genuine</strong> — bukan follower count, tapi 20–30 orang yang akan recommend kamu langsung saat ada opportunity. Network yang dibangun saat tidak butuh, paling kuat saat dibutuhkan.</div></div>
+      <div class="moat-item"><span class="mi-num">03</span><div class="mi-text"><strong>Kombinasi skill yang rare</strong> — bukan satu skill terbaik di dunia, tapi kombinasi 2–3 skill yang jarang ada di satu orang. Sales + data? Content + finance? Product + AI? Kombinasi itu yang menciptakan nilai unik.</div></div>
+      <div class="moat-item"><span class="mi-num">04</span><div class="mi-text"><strong>Personal brand yang documented</strong> — konten, tulisan, atau presentasi yang bisa dilihat orang bahkan sebelum ketemu kamu. Ini yang membuat kamu dikenali sebelum negosiasi dimulai.</div></div>
+      <div class="moat-item"><span class="mi-num">05</span><div class="mi-text"><strong>Track record yang tercatat</strong> — project yang berhasil, angka yang bisa diklaim, impact yang bisa dibuktikan. Rekam semuanya — bukan untuk sombong, tapi karena memori manusia pendek dan angka berbicara.</div></div>
+    </div>
+  </div>
+
+  <!-- AGENT CALLOUT -->
+  <div class="agent-callout">
+    <div class="ac-label">Tier 3 yang sudah jalan</div>
+    <div class="ac-title">Instagram Agent — <em>posting sendiri</em> tiap pagi</div>
+    <div class="ac-desc">Setup 1 weekend. GitHub Actions jalan tiap hari jam 05.00 WIB. Claude AI nulis konten, Meta API posting ke Instagram. Komisi afiliasi masuk dari link di bio — tanpa buka laptop lagi.</div>
+    <div class="ac-stats">
+      <div class="ac-stat"><div class="n">Rp65rb</div><div class="l">Biaya operasional/bulan</div></div>
+      <div class="ac-stat"><div class="n">1 weekend</div><div class="l">Setup time</div></div>
+      <div class="ac-stat"><div class="n">Rp340rb→Rp1.8jt</div><div class="l">Komisi bulan 1→4</div></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-ey">Mau lihat Tier 3 yang sudah jalan?</div>
+    <div class="cta-ttl">Instagram Agent —<br><em>automation system</em> lengkap</div>
+    <div class="cta-desc">Panduan setup Instagram Agent dari nol: reels generator, bridge system, 3-tier image rendering, dan monetisasi afiliasi.</div>
+    <a class="cta-btn" href="https://ricoputra.github.io/ebook/">Lihat Instagram Agent Ebook →</a>
+  </div>
+</div>
+
+<div class="footer">Income Diversification Framework · @wealthymindset88 · 2026 · Gratis untuk semua</div>
+</body>
+</html>
